@@ -8,7 +8,13 @@
 
 import UIKit
 
-class StatusView: UIView {    
+class StatusView: UIView {
+    private var gradientLayer: CAGradientLayer {
+        let layer = CAGradientLayer()
+        layer.frame = self.bounds
+        return layer
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setProperties()
@@ -20,6 +26,6 @@ class StatusView: UIView {
     }
     
     func setProperties() {
-        self.backgroundColor = .red
+        self.layer.addSublayer(self.gradientLayer.goodState)
     }
 }
