@@ -9,8 +9,8 @@
 import UIKit
 
 class DensityLabel: UILabel {
-    var density = 5
-    var output: String {
+    private var density = 5
+    private var output: String {
         return "\(density) 𝜇g/m³"
     }
     
@@ -24,7 +24,7 @@ class DensityLabel: UILabel {
         setProperties()
     }
     
-    func setProperties() {
+    private func setProperties() {
         self.text = output
     }
 }

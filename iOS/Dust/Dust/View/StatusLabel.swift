@@ -26,7 +26,7 @@ class StatusLabel: UILabel {
         setProperties()
     }
     
-    func setProperties() {
+    private func setProperties() {
         self.text = State.good.rawValue
     }
 }

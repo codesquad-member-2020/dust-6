@@ -9,9 +9,9 @@
 import UIKit
 
 class StationLabel: UILabel {
-    let fontSize: CGFloat = 15
-    var station = "강남구"
-    var output: String {
+    private let fontSize: CGFloat = 15
+    private var station = "강남구"
+    private var output: String {
         return "\(station) 측정소 기준"
     }
     
@@ -25,7 +25,7 @@ class StationLabel: UILabel {
         setProperties()
     }
     
-    func setProperties() {
+    private func setProperties() {
         let attributedString = NSMutableAttributedString(string: output)
         attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: (output as NSString).range(of: station))
         self.attributedText = attributedString

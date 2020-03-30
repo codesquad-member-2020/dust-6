@@ -25,7 +25,7 @@ class StatusView: UIView {
         setProperties()
     }
     
-    func setProperties() {
-        self.layer.insertSublayer(self.gradientLayer.goodState, at: 0)
+    private func setProperties() {
+        self.layer.insertSublayer(gradientLayer.goodState, at: 0)
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class MeasurementTimeLabel: UILabel {
-    var time = "오늘 19:00"
+    private var time = "오늘 19:00"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +21,7 @@ class MeasurementTimeLabel: UILabel {
         setProperties()
     }
     
-    func setProperties() {
+    private func setProperties() {
         self.text = time
     }
 }
