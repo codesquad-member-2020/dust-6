@@ -16,16 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yom-hq-OI1" customClass="StatusView" customModule="Dust" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="346"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yom-hq-OI1" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="0bW-ta-ymC"/>
-                            <constraint firstItem="yom-hq-OI1" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="BIY-nr-rMU"/>
-                            <constraint firstItem="yom-hq-OI1" firstAttribute="height" secondItem="PQr-Ze-W5v" secondAttribute="height" multiplier="45%" id="jwe-1P-G8w"/>
-                            <constraint firstItem="yom-hq-OI1" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="mAC-PI-Sac"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="0bW-ta-ymC"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BIY-nr-rMU"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="40%" id="jwe-1P-G8w"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="mAC-PI-Sac"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
