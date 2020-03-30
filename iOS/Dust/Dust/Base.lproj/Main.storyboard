@@ -30,12 +30,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28G-z2-7mC" customClass="StatusLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="189.5" y="208" width="35" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="7pE-tA-3rH" firstAttribute="top" secondItem="9GE-gH-ycc" secondAttribute="bottom" id="EWR-tF-QUU"/>
                                     <constraint firstItem="9GE-gH-ycc" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="OPk-tT-gaj"/>
                                     <constraint firstItem="7pE-tA-3rH" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="epD-ro-37Q"/>
+                                    <constraint firstItem="28G-z2-7mC" firstAttribute="top" secondItem="7pE-tA-3rH" secondAttribute="bottom" id="sFf-rt-FxA"/>
+                                    <constraint firstItem="28G-z2-7mC" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="ynR-hi-jVi"/>
                                 </constraints>
                             </view>
                         </subviews>
