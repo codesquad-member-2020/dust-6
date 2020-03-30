@@ -5,7 +5,7 @@
 * iOS: [또치](https://github.com/TTozzi)
 
 ## 배포
-http://3.34.23.92:8080/
+http://3.34.23.92:80/
 
 # Ground Rule
 ## Scrum
@@ -16,6 +16,7 @@ http://3.34.23.92:8080/
   * 오늘의 목표
 
 ## Commit Convention
+| 타입 | 설명 |
 |--|--|
 |`Feat`|새로운 기능 추가
 |`Fix`|버그 수정
@@ -34,18 +35,18 @@ http://3.34.23.92:8080/
 ## 브랜치
 | 브랜치 | 설명 |
 |--|--|
-|master`| 배포 버전
-|deployTest`| 배포 테스트 버전
-|dev`| 기능 개발 완료 후 dev 브랜치에 병합
-|클래스/Feature/기능`| 기능 개발 브랜치
+|master| 배포 버전
+|deployTest| 배포 테스트 버전
+|dev| 기능 개발 완료 후 dev 브랜치에 병합
+|클래스/Feature/기능| 기능 개발 브랜치
   
 ## WorkFlow 관리
 * Github flow 사용
 
 ## WEB API
 | URL | 설명 |
-|--
-| /api/locations/ | 측정소 전체 목록과 위치 반환|
+|--|--|
+| /api/locations/ | 측정소 전체 목록과 위치 반환 |
 | /api/location/@?= | 입력한 위도 경도에서 가장 가까운 측정소 반환 |
 | /api/{location}/dust-status | /api/{location}/dust-status |
-| /api/dust/forcast| 미세먼지 예보 |
+| /api/dust/forecast| 미세먼지 예보 |
