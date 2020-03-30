@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FineDustViewController.swift
 //  Dust
 //
 //  Created by TTOzzi on 2020/03/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FineDustViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

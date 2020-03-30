@@ -9,15 +9,15 @@
 import UIKit
 
 class DustDensityDataSource: NSObject, UITableViewDataSource {
-    var dustDensityData: [Int] = [5, 26, 52, 81, 120, 75, 151, 205, 120, 81, 75, 31, 10, 18, 9, 25, 33, 50, 63, 20, 181, 144, 77, 111]
+    private var dustDensityData: [Int] = [5, 26, 52, 81, 120, 75, 151, 205, 120, 81, 75, 31, 10, 18, 9, 25, 33, 50, 63, 20, 181, 144, 77, 111]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 24
+        return dustDensityData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DustDensityCell", for: indexPath) as! DustDensityCell
-        cell.setBarWidth(with: dustDensityData[indexPath.row])
+        cell.configureCell(with: dustDensityData[indexPath.row])
         return cell
     }
 }

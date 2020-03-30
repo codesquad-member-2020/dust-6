@@ -10,26 +10,35 @@ import UIKit
 
 class DustDensityCell: UITableViewCell {
     static let identifier = "DustDensityCell"
+    private let maxValueOfBar: CGFloat = 200
     
-    func setBarWidth(with value: Int) {
+    func configureCell(with value: Int) {
         if !contentView.subviews.isEmpty {
             removeSubviews()
         }
-        let fillWidth = (CGFloat(value) / 200) * self.frame.size.width
+        setBarWidth(with: value)
+        setTextLabel(with: value)
+    }
+    
+    private func setBarWidth(with value: Int) {
+        let fillWidth = (CGFloat(value) / maxValueOfBar) * self.frame.size.width
         let rect = CGRect(x: 0, y: 0, width: fillWidth, height: self.frame.size.height)
         let bar = UIView(frame: rect)
-        self.contentView.addSubview(bar)
-        self.textLabel?.text = "\(value)"
-        self.textLabel?.textAlignment = .right
-        self.textLabel?.font = .systemFont(ofSize: 12.0)
         let gradeScope: [ClosedRange<Int>:UIColor] = [0...30:.systemBlue,
                                                       31...80:.systemGreen,
                                                       81...120:.systemOrange,
                                                       121...9999:.systemRed]
         bar.backgroundColor = gradeScope[value]
+        self.contentView.addSubview(bar)
     }
     
-    func removeSubviews() {
+    private func setTextLabel(with value: Int) {
+        self.textLabel?.text = "\(value)"
+        self.textLabel?.textAlignment = .right
+        self.textLabel?.font = .systemFont(ofSize: 12.0)
+    }
+    
+    private func removeSubviews() {
         self.contentView.subviews.forEach {
             $0.removeFromSuperview()
         }

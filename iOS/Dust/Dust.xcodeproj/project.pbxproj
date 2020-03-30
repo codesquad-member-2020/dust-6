@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		444F831C2431C87000CDEAE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F831B2431C87000CDEAE3 /* AppDelegate.swift */; };
 		444F831E2431C87000CDEAE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F831D2431C87000CDEAE3 /* SceneDelegate.swift */; };
-		444F83202431C87000CDEAE3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F831F2431C87000CDEAE3 /* FirstViewController.swift */; };
-		444F83222431C87000CDEAE3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F83212431C87000CDEAE3 /* SecondViewController.swift */; };
+		444F83202431C87000CDEAE3 /* FineDustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F831F2431C87000CDEAE3 /* FineDustViewController.swift */; };
+		444F83222431C87000CDEAE3 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F83212431C87000CDEAE3 /* ForecastViewController.swift */; };
 		444F83252431C87000CDEAE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444F83232431C87000CDEAE3 /* Main.storyboard */; };
 		444F83272431C87200CDEAE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 444F83262431C87200CDEAE3 /* Assets.xcassets */; };
 		444F832A2431C87200CDEAE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444F83282431C87200CDEAE3 /* LaunchScreen.storyboard */; };
@@ -31,8 +31,8 @@
 		444F83182431C87000CDEAE3 /* Dust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		444F831B2431C87000CDEAE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		444F831D2431C87000CDEAE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		444F831F2431C87000CDEAE3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		444F83212431C87000CDEAE3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		444F831F2431C87000CDEAE3 /* FineDustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustViewController.swift; sourceTree = "<group>"; };
+		444F83212431C87000CDEAE3 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		444F83242431C87000CDEAE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		444F83262431C87200CDEAE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		444F83292431C87200CDEAE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 			children = (
 				444F831B2431C87000CDEAE3 /* AppDelegate.swift */,
 				444F831D2431C87000CDEAE3 /* SceneDelegate.swift */,
-				444F831F2431C87000CDEAE3 /* FirstViewController.swift */,
-				444F83212431C87000CDEAE3 /* SecondViewController.swift */,
+				444F831F2431C87000CDEAE3 /* FineDustViewController.swift */,
+				444F83212431C87000CDEAE3 /* ForecastViewController.swift */,
 				44E9D7152431D38F00087381 /* Extension */,
 				444F83312431CCC300CDEAE3 /* View */,
 				444F83232431C87000CDEAE3 /* Main.storyboard */,
@@ -193,12 +193,12 @@
 				446E20EA24322121005CFB15 /* DustDensityTableView.swift in Sources */,
 				446E20E62432007C005CFB15 /* MeasurementTimeLabel.swift in Sources */,
 				446E20E22431E99B005CFB15 /* StatusLabel.swift in Sources */,
-				444F83222431C87000CDEAE3 /* SecondViewController.swift in Sources */,
+				444F83222431C87000CDEAE3 /* ForecastViewController.swift in Sources */,
 				446E20E824320600005CFB15 /* StationLabel.swift in Sources */,
 				44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */,
 				44E9D7172431D3A600087381 /* CAGradientLayerExtension.swift in Sources */,
 				446E20E42431ECF1005CFB15 /* DensityLabel.swift in Sources */,
-				444F83202431C87000CDEAE3 /* FirstViewController.swift in Sources */,
+				444F83202431C87000CDEAE3 /* FineDustViewController.swift in Sources */,
 				444F831C2431C87000CDEAE3 /* AppDelegate.swift in Sources */,
 				444F831E2431C87000CDEAE3 /* SceneDelegate.swift in Sources */,
 				446E20EC243228C7005CFB15 /* DustDensityCell.swift in Sources */,
