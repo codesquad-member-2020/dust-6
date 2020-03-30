@@ -1,2 +1,51 @@
-# dust-6
-ë¯¸ì„¸ë¨¼ì§€ í”„ë¡œì íŠ¸ - 6íŒ€
+# Signup-6
+È¸¿ø°¡ÀÔ ÇÁ·ÎÁ§Æ® - 6ÆÀ
+* FE: [Reese](https://github.com/reesekimm)
+* BE: [Poogle](https://github.com/suhyunsim), [Ever](https://github.com/hsik0225)
+* iOS: [¶ÇÄ¡](https://github.com/TTozzi)
+
+## ¹èÆ÷
+http://3.34.23.92:8080/
+
+# Ground Rule
+## Scrum
+* ¿ÀÀü 10½Ã (Çà ¾Æ¿ô)
+* ³»¿ë
+  * ÄÁµğ¼Ç
+  * ±¸Çö »óÈ²
+  * ¿À´ÃÀÇ ¸ñÇ¥
+
+## Commit Convention
+|--|--|
+|`Feat`|»õ·Î¿î ±â´É Ãß°¡
+|`Fix`|¹ö±× ¼öÁ¤
+|`Docs`|¹®¼­ ¼öÁ¤
+|`Refactor`|ÄÚµå ¸®ÆÑÅä¸µ
+|`Style`|ÄÚµå Æ÷¸ËÆÃ (ÄÚµå º¯°æÀÌ ¾ø´Â °æ¿ì)
+|`Test`|Å×½ºÆ® ÄÚµå ÀÛ¼º
+|`Chore`|¼Ò½º ÄÚµå¸¦ °ÇµéÁö ¾Ê´Â ÀÛ¾÷(ºôµå ¾÷¹« ¼öÁ¤)
+
+[Âü°í](https://doublesprogramming.tistory.com/256)
+
+## Git issue È°¿ë
+- Ä¿¹Ô ¸Ş¼¼Áö·Î ÀÌ½´ ´İ±â
+- `Fixed #n`
+
+## ºê·£Ä¡
+| ºê·£Ä¡ | ¼³¸í |
+|--|--|
+|master`| ¹èÆ÷ ¹öÀü
+|deployTest`| ¹èÆ÷ Å×½ºÆ® ¹öÀü
+|dev`| ±â´É °³¹ß ¿Ï·á ÈÄ dev ºê·£Ä¡¿¡ º´ÇÕ
+|Å¬·¡½º/Feature/±â´É`| ±â´É °³¹ß ºê·£Ä¡
+  
+## WorkFlow °ü¸®
+* Github flow »ç¿ë
+
+## WEB API
+| URL | ¼³¸í |
+|--
+| /api/locations/ | ÃøÁ¤¼Ò ÀüÃ¼ ¸ñ·Ï°ú À§Ä¡ ¹İÈ¯|
+| /api/location/@?= | ÀÔ·ÂÇÑ À§µµ °æµµ¿¡¼­ °¡Àå °¡±î¿î ÃøÁ¤¼Ò ¹İÈ¯ |
+| /api/{location}/dust-status | /api/{location}/dust-status |
+| /api/dust/forcast| ¹Ì¼¼¸ÕÁö ¿¹º¸ |
