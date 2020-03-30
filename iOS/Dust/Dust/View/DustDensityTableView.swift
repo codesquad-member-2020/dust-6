@@ -9,11 +9,17 @@
 import UIKit
 
 class DustDensityTableView: UITableView {
+    var dustDensityData: DustDensityDataSource!
+    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+        dustDensityData = DustDensityDataSource()
+        self.dataSource = dustDensityData
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        dustDensityData = DustDensityDataSource()
+        self.dataSource = dustDensityData
     }
 }

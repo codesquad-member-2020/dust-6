@@ -20,6 +20,8 @@
 		446E20E62432007C005CFB15 /* MeasurementTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20E52432007C005CFB15 /* MeasurementTimeLabel.swift */; };
 		446E20E824320600005CFB15 /* StationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20E724320600005CFB15 /* StationLabel.swift */; };
 		446E20EA24322121005CFB15 /* DustDensityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20E924322121005CFB15 /* DustDensityTableView.swift */; };
+		446E20EC243228C7005CFB15 /* DustDensityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20EB243228C7005CFB15 /* DustDensityCell.swift */; };
+		446E20EE24322FF1005CFB15 /* DustDensityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */; };
 		44E9D7172431D3A600087381 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9D7162431D3A600087381 /* CAGradientLayerExtension.swift */; };
 		44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9D71A2431E75500087381 /* StatusEmoji.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		446E20E52432007C005CFB15 /* MeasurementTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementTimeLabel.swift; sourceTree = "<group>"; };
 		446E20E724320600005CFB15 /* StationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLabel.swift; sourceTree = "<group>"; };
 		446E20E924322121005CFB15 /* DustDensityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustDensityTableView.swift; sourceTree = "<group>"; };
+		446E20EB243228C7005CFB15 /* DustDensityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustDensityCell.swift; sourceTree = "<group>"; };
+		446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustDensityDataSource.swift; sourceTree = "<group>"; };
 		44E9D7162431D3A600087381 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 		44E9D71A2431E75500087381 /* StatusEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEmoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +102,8 @@
 				446E20E52432007C005CFB15 /* MeasurementTimeLabel.swift */,
 				446E20E724320600005CFB15 /* StationLabel.swift */,
 				446E20E924322121005CFB15 /* DustDensityTableView.swift */,
+				446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */,
+				446E20EB243228C7005CFB15 /* DustDensityCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,7 +198,9 @@
 				444F83202431C87000CDEAE3 /* FirstViewController.swift in Sources */,
 				444F831C2431C87000CDEAE3 /* AppDelegate.swift in Sources */,
 				444F831E2431C87000CDEAE3 /* SceneDelegate.swift in Sources */,
+				446E20EC243228C7005CFB15 /* DustDensityCell.swift in Sources */,
 				444F83332431CCD200CDEAE3 /* StatusView.swift in Sources */,
+				446E20EE24322FF1005CFB15 /* DustDensityDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
