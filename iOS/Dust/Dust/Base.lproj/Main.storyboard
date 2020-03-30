@@ -17,13 +17,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yom-hq-OI1" customClass="StatusView" customModule="Dust" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GE-gH-ycc">
+                                        <rect key="frame" x="139" y="52" width="137" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="9GE-gH-ycc" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="OPk-tT-gaj"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yom-hq-OI1" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="0bW-ta-ymC"/>
                             <constraint firstItem="yom-hq-OI1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BIY-nr-rMU"/>
+                            <constraint firstItem="9GE-gH-ycc" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="hGP-rb-shS"/>
                             <constraint firstItem="yom-hq-OI1" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="40%" id="jwe-1P-G8w"/>
                             <constraint firstItem="yom-hq-OI1" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="mAC-PI-Sac"/>
                         </constraints>
