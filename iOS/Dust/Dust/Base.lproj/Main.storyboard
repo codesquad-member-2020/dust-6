@@ -19,15 +19,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GE-gH-ycc">
-                                        <rect key="frame" x="139" y="52" width="137" height="36"/>
+                                        <rect key="frame" x="138.5" y="52" width="137" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pE-tA-3rH" customClass="StatusEmoji" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="153" y="88" width="108" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="7pE-tA-3rH" firstAttribute="top" secondItem="9GE-gH-ycc" secondAttribute="bottom" id="EWR-tF-QUU"/>
                                     <constraint firstItem="9GE-gH-ycc" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="OPk-tT-gaj"/>
+                                    <constraint firstItem="7pE-tA-3rH" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="epD-ro-37Q"/>
                                 </constraints>
                             </view>
                         </subviews>
