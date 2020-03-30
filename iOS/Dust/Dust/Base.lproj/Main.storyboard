@@ -48,11 +48,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강남구 측정소 기준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSh-1Q-jXj" customClass="StationLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="151" y="272" width="112" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="fgu-8k-mCE" firstAttribute="centerX" secondItem="7pE-tA-3rH" secondAttribute="leading" id="0yh-1H-B3W"/>
+                                    <constraint firstItem="PSh-1Q-jXj" firstAttribute="top" secondItem="gMh-oY-oS2" secondAttribute="bottom" constant="8" id="4La-ZD-XZy"/>
                                     <constraint firstItem="7pE-tA-3rH" firstAttribute="top" secondItem="9GE-gH-ycc" secondAttribute="bottom" id="EWR-tF-QUU"/>
+                                    <constraint firstItem="PSh-1Q-jXj" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="Jml-Mx-m1U"/>
                                     <constraint firstItem="9GE-gH-ycc" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="OPk-tT-gaj"/>
                                     <constraint firstItem="7pE-tA-3rH" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="epD-ro-37Q"/>
                                     <constraint firstItem="gMh-oY-oS2" firstAttribute="centerX" secondItem="7pE-tA-3rH" secondAttribute="trailing" id="fGz-lh-tgi"/>
