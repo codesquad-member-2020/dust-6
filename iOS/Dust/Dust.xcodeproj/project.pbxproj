@@ -16,6 +16,7 @@
 		444F832A2431C87200CDEAE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444F83282431C87200CDEAE3 /* LaunchScreen.storyboard */; };
 		444F83332431CCD200CDEAE3 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F83322431CCD200CDEAE3 /* StatusView.swift */; };
 		446E20E22431E99B005CFB15 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20E12431E99B005CFB15 /* StatusLabel.swift */; };
+		446E20E42431ECF1005CFB15 /* DensityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20E32431ECF1005CFB15 /* DensityLabel.swift */; };
 		44E9D7172431D3A600087381 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9D7162431D3A600087381 /* CAGradientLayerExtension.swift */; };
 		44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9D71A2431E75500087381 /* StatusEmoji.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		444F832B2431C87200CDEAE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		444F83322431CCD200CDEAE3 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		446E20E12431E99B005CFB15 /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
+		446E20E32431ECF1005CFB15 /* DensityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DensityLabel.swift; sourceTree = "<group>"; };
 		44E9D7162431D3A600087381 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 		44E9D71A2431E75500087381 /* StatusEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEmoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 				444F83322431CCD200CDEAE3 /* StatusView.swift */,
 				44E9D71A2431E75500087381 /* StatusEmoji.swift */,
 				446E20E12431E99B005CFB15 /* StatusLabel.swift */,
+				446E20E32431ECF1005CFB15 /* DensityLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				444F83222431C87000CDEAE3 /* SecondViewController.swift in Sources */,
 				44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */,
 				44E9D7172431D3A600087381 /* CAGradientLayerExtension.swift in Sources */,
+				446E20E42431ECF1005CFB15 /* DensityLabel.swift in Sources */,
 				444F83202431C87000CDEAE3 /* FirstViewController.swift in Sources */,
 				444F831C2431C87000CDEAE3 /* AppDelegate.swift in Sources */,
 				444F831E2431C87000CDEAE3 /* SceneDelegate.swift in Sources */,

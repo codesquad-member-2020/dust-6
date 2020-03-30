@@ -36,13 +36,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-oY-oS2">
+                                        <rect key="frame" x="215" y="240" width="92" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 𝜇g/m³" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-8k-mCE" customClass="DensityLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="118.5" y="240" width="69" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="fgu-8k-mCE" firstAttribute="centerX" secondItem="7pE-tA-3rH" secondAttribute="leading" id="0yh-1H-B3W"/>
                                     <constraint firstItem="7pE-tA-3rH" firstAttribute="top" secondItem="9GE-gH-ycc" secondAttribute="bottom" id="EWR-tF-QUU"/>
                                     <constraint firstItem="9GE-gH-ycc" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="OPk-tT-gaj"/>
                                     <constraint firstItem="7pE-tA-3rH" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="epD-ro-37Q"/>
+                                    <constraint firstItem="gMh-oY-oS2" firstAttribute="centerX" secondItem="7pE-tA-3rH" secondAttribute="trailing" id="fGz-lh-tgi"/>
+                                    <constraint firstItem="gMh-oY-oS2" firstAttribute="top" secondItem="28G-z2-7mC" secondAttribute="bottom" constant="8" id="pl2-pS-vI4"/>
                                     <constraint firstItem="28G-z2-7mC" firstAttribute="top" secondItem="7pE-tA-3rH" secondAttribute="bottom" id="sFf-rt-FxA"/>
+                                    <constraint firstItem="fgu-8k-mCE" firstAttribute="top" secondItem="28G-z2-7mC" secondAttribute="bottom" constant="8" id="wAf-as-egb"/>
                                     <constraint firstItem="28G-z2-7mC" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="ynR-hi-jVi"/>
                                 </constraints>
                             </view>
