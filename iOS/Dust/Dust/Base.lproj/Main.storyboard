@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yom-hq-OI1" customClass="StatusView" customModule="Dust" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="403"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GE-gH-ycc">
                                         <rect key="frame" x="116.5" y="52" width="181.5" height="48"/>
@@ -25,32 +25,32 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pE-tA-3rH" customClass="StatusEmoji" customModule="Dust" customModuleProvider="target">
-                                        <rect key="frame" x="136.5" y="100" width="141" height="155.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="130"/>
+                                        <rect key="frame" x="131" y="100" width="152" height="167.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="140"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28G-z2-7mC" customClass="StatusLabel" customModule="Dust" customModuleProvider="target">
-                                        <rect key="frame" x="181" y="255.5" width="52" height="36"/>
+                                        <rect key="frame" x="181" y="267.5" width="52" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-oY-oS2" customClass="MeasurementTimeLabel" customModule="Dust" customModuleProvider="target">
-                                        <rect key="frame" x="221" y="299.5" width="113.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="215" y="311.5" width="136" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 𝜇g/m³" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-8k-mCE" customClass="DensityLabel" customModule="Dust" customModuleProvider="target">
-                                        <rect key="frame" x="93.5" y="299.5" width="86" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="80" y="311.5" width="102.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강남구 측정소 기준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSh-1Q-jXj" customClass="StationLabel" customModule="Dust" customModuleProvider="target">
-                                        <rect key="frame" x="151" y="337.5" width="112" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <rect key="frame" x="147.5" y="355.5" width="119.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="20" estimatedRowHeight="20" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="958-Wq-lCk" customClass="DustDensityTableView" customModule="Dust" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="403" width="414" height="410"/>
+                                <rect key="frame" x="0.0" y="430" width="414" height="383"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DustDensityCell" id="ftf-Q5-Tcb" customClass="DustDensityCell" customModule="Dust" customModuleProvider="target">
@@ -94,7 +94,7 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="958-Wq-lCk" secondAttribute="trailing" id="WBJ-Yr-DN4"/>
                             <constraint firstItem="9GE-gH-ycc" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="hGP-rb-shS"/>
                             <constraint firstItem="958-Wq-lCk" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="jOU-vf-LW1"/>
-                            <constraint firstItem="yom-hq-OI1" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="45%" id="jwe-1P-G8w"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="48%" id="jwe-1P-G8w"/>
                             <constraint firstItem="yom-hq-OI1" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="mAC-PI-Sac"/>
                             <constraint firstItem="958-Wq-lCk" firstAttribute="top" secondItem="yom-hq-OI1" secondAttribute="bottom" id="vct-0z-aKk"/>
                         </constraints>
