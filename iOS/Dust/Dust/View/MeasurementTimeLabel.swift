@@ -24,4 +24,8 @@ class MeasurementTimeLabel: UILabel {
     private func setProperties() {
         self.text = time
     }
+    
+    func setTime(time: String) {
+        self.text = "오늘 \(time)"
+    }
 }
