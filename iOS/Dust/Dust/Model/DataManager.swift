@@ -14,7 +14,7 @@ class DataManager {
     static let gradeChanged = NSNotification.Name.init("gradeChanged")
     static let valueChanged = NSNotification.Name.init("valueChanged")
     
-    var dustData = MockDustStatus()
+    private var dustData = MockDustStatus()
     
     func loadStation() {
         let station = dustData.stationName
@@ -26,7 +26,6 @@ class DataManager {
         let time = data.dataTime.components(separatedBy: " ")[1]
         let grade = data.pm10Grade
         let value = data.pm10Value
-        
         NotificationCenter.default.post(name: DataManager.timeChanged, object: nil, userInfo: [DataManager.timeChanged:time])
         NotificationCenter.default.post(name: DataManager.gradeChanged, object: nil, userInfo: [DataManager.gradeChanged:grade])
         NotificationCenter.default.post(name: DataManager.valueChanged, object: nil, userInfo: [DataManager.valueChanged:value])
