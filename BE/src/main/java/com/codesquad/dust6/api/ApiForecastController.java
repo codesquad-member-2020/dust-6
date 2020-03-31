@@ -12,6 +12,8 @@ import java.util.List;
 @RestController
 public class ApiForecastController {
 
+    System.getenv("API_KEY");
+
     @GetMapping("/api/forecast")
     public ResponseDTO forecast() {
         List<String> imageUrls = new ArrayList<>();
