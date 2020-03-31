@@ -24,6 +24,7 @@ class FineDustViewController: UIViewController, UITableViewDelegate {
         dustDensityTableView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(updateTimeLabel(_:)), name: NSNotification.Name.init("timeChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gradeDidChanged(_:)), name: NSNotification.Name.init("gradeChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(valueDidChanged(_:)), name: NSNotification.Name.init("valueChanged"), object: nil)
     }
     
     @objc func updateTimeLabel(_ notification: NSNotification) {
@@ -35,6 +36,10 @@ class FineDustViewController: UIViewController, UITableViewDelegate {
         statusView.setStatusView(with: grade)
         statusEmoji.setEmoji(with: grade)
         statusLabel.setStatusLabel(with: grade)
+    }
+    
+    @objc func valueDidChanged(_ notification: NSNotification) {
+        densityLabel.setDensity(with: notification.userInfo!["valueChanged"] as! Int)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
