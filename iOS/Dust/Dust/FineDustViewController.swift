@@ -22,10 +22,10 @@ class FineDustViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         dustDensityTableView.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTimeLabel(_:)), name: NSNotification.Name.init("timeChanged"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gradeDidChanged(_:)), name: NSNotification.Name.init("gradeChanged"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(valueDidChanged(_:)), name: NSNotification.Name.init("valueChanged"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateStaion(_:)), name: NSNotification.Name.init("station"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTimeLabel(_:)), name: DataManager.timeChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gradeDidChanged(_:)), name: DataManager.gradeChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(valueDidChanged(_:)), name: DataManager.valueChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStaion(_:)), name: DataManager.stationLoaded, object: nil)
         loadData()
     }
     
@@ -35,22 +35,22 @@ class FineDustViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func updateStaion(_ notification: NSNotification) {
-        stationLabel.setStation(notification.userInfo!["station"] as! String)
+        stationLabel.setStation(notification.userInfo![DataManager.stationLoaded] as! String)
     }
     
     @objc func updateTimeLabel(_ notification: NSNotification) {
-        timeLabel.setTime(time: notification.userInfo!["timeChanged"] as! String)
+        timeLabel.setTime(time: notification.userInfo![DataManager.timeChanged] as! String)
     }
     
     @objc func gradeDidChanged(_ notification: NSNotification) {
-        let grade = notification.userInfo!["gradeChanged"] as! Int
+        let grade = notification.userInfo![DataManager.gradeChanged] as! Int
         statusView.setStatusView(with: grade)
         statusEmoji.setEmoji(with: grade)
         statusLabel.setStatusLabel(with: grade)
     }
     
     @objc func valueDidChanged(_ notification: NSNotification) {
-        densityLabel.setDensity(with: notification.userInfo!["valueChanged"] as! Int)
+        densityLabel.setDensity(with: notification.userInfo![DataManager.valueChanged] as! Int)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
