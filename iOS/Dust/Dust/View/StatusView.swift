@@ -28,4 +28,14 @@ class StatusView: UIView {
     private func setProperties() {
         self.layer.insertSublayer(gradientLayer.goodState, at: 0)
     }
+    
+    func setStatusView(with grade: Int) {
+        self.layer.sublayers?.removeFirst()
+        let layerGrading: [Int: CAGradientLayer] = [1: gradientLayer.goodState,
+                                                    2: gradientLayer.normalState,
+                                                    3: gradientLayer.badState,
+                                                    4: gradientLayer.worstState]
+        guard let layer = layerGrading[grade] else { return }
+        self.layer.insertSublayer(layer, at: 0)
+    }
 }
