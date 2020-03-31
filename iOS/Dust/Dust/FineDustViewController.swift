@@ -25,6 +25,17 @@ class FineDustViewController: UIViewController, UITableViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(updateTimeLabel(_:)), name: NSNotification.Name.init("timeChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gradeDidChanged(_:)), name: NSNotification.Name.init("gradeChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(valueDidChanged(_:)), name: NSNotification.Name.init("valueChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStaion(_:)), name: NSNotification.Name.init("station"), object: nil)
+        loadData()
+    }
+    
+    func loadData() {
+        dataManager.loadStation()
+        dataManager.reloadData(with: 0)
+    }
+    
+    @objc func updateStaion(_ notification: NSNotification) {
+        stationLabel.setStation(notification.userInfo!["station"] as! String)
     }
     
     @objc func updateTimeLabel(_ notification: NSNotification) {

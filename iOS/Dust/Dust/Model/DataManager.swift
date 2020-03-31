@@ -11,6 +11,11 @@ import Foundation
 class DataManager {
     var dustData = MockDustStatus()
     
+    func loadStation() {
+        let station = dustData.stationName
+        NotificationCenter.default.post(name: NSNotification.Name.init("station"), object: nil, userInfo: ["station":station])
+    }
+    
     func reloadData(with index: Int) {
         let data = dustData.data[index]
         let time = data.dataTime.components(separatedBy: " ")[1]

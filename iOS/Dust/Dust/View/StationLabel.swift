@@ -30,4 +30,9 @@ class StationLabel: UILabel {
         attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: (output as NSString).range(of: station))
         self.attributedText = attributedString
     }
+    
+    func setStation(_ loadedStation: String) {
+        station = loadedStation
+        setProperties()
+    }
 }
