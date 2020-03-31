@@ -34,6 +34,7 @@ class FineDustViewController: UIViewController, UITableViewDelegate {
         let grade = notification.userInfo!["gradeChanged"] as! Int
         statusView.setStatusView(with: grade)
         statusEmoji.setEmoji(with: grade)
+        statusLabel.setStatusLabel(with: grade)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
