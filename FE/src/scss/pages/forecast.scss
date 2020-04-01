@@ -1,3 +1,33 @@
 .forecast {
-	background: lightsalmon;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 2%;
+	padding-right: 2%;
+	* {
+		width: 100%;
+	}
+	h1 {
+		position: absolute;
+		top: 13%;
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.forecast__panel {
+		margin-bottom: 20px;
+		.forecast__overall {
+			margin-bottom: 16px;
+			line-height: 1.3em;
+			font-weight: bold;
+			padding: 0 5px;
+		}
+		.forecast__grade {
+			font-size: 13px;
+			line-height: 1.3em;
+			padding: 0 5px;
+		}
+	}
 }
