@@ -27,4 +27,9 @@ class DensityLabel: UILabel {
     private func setProperties() {
         self.text = output
     }
+    
+    func setDensity(with value: Int) {
+        density = value
+        self.text = output
+    }
 }

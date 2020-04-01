@@ -12,23 +12,23 @@ class DustDensityCell: UITableViewCell {
     static let identifier = "DustDensityCell"
     private let maxValueOfBar: CGFloat = 200
     
-    func configureCell(with value: Int) {
+    func configureCell(value: Int, grade: Int) {
         if !contentView.subviews.isEmpty {
             removeSubviews()
         }
-        setBarWidth(with: value)
+        setBar(value: value, grade: grade)
         setTextLabel(with: value)
     }
     
-    private func setBarWidth(with value: Int) {
+    private func setBar(value: Int, grade: Int) {
         let fillWidth = (CGFloat(value) / maxValueOfBar) * self.frame.size.width
         let rect = CGRect(x: 0, y: 0, width: fillWidth, height: self.frame.size.height)
         let bar = UIView(frame: rect)
-        let gradeScope: [ClosedRange<Int>:UIColor] = [0...30:.systemBlue,
-                                                      31...80:.systemGreen,
-                                                      81...120:.systemOrange,
-                                                      121...9999:.systemRed]
-        bar.backgroundColor = gradeScope[value]
+        let gradeScope: [Int:UIColor] = [1:.systemBlue,
+                                                      2:.systemGreen,
+                                                      3:.systemOrange,
+                                                      4:.systemRed]
+        bar.backgroundColor = gradeScope[grade]
         self.contentView.addSubview(bar)
     }
     

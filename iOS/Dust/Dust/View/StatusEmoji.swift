@@ -29,4 +29,12 @@ class StatusEmoji: UILabel {
     private func setProperties() {
         self.text = State.good.rawValue
     }
+    
+    func setEmoji(with grade: Int) {
+        let emojiGrading: [Int: String] = [1: State.good.rawValue,
+                                           2: State.normal.rawValue,
+                                           3: State.bad.rawValue,
+                                           4: State.worst.rawValue]
+        self.text = emojiGrading[grade]
+    }
 }

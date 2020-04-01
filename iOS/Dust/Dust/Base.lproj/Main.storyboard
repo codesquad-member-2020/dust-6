@@ -101,6 +101,15 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="미세먼지" image="smoke.fill" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="densityLabel" destination="fgu-8k-mCE" id="0TN-VN-hvM"/>
+                        <outlet property="dustDensityTableView" destination="958-Wq-lCk" id="bDH-8Q-3FZ"/>
+                        <outlet property="stationLabel" destination="PSh-1Q-jXj" id="nEZ-eK-Ea4"/>
+                        <outlet property="statusEmoji" destination="7pE-tA-3rH" id="NPM-tm-Ecr"/>
+                        <outlet property="statusLabel" destination="28G-z2-7mC" id="IMg-OR-gKb"/>
+                        <outlet property="statusView" destination="yom-hq-OI1" id="Phx-zK-YWG"/>
+                        <outlet property="timeLabel" destination="gMh-oY-oS2" id="gjf-te-fS7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
