@@ -14,30 +14,48 @@
 		font-size: 24px;
 		font-weight: bold;
 	}
-	.dust__panel {
-		height: 50%;
-		padding-top: 21%;
-		background: linear-gradient($blue, transparent);
-		.grade__emoji {
-			font-size: 120px;
-			margin-bottom: 24px;
-		}
-		.grade__text {
-			font-size: 24px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-		.dust__value {
-			display: flex;
-			justify-content: space-evenly;
-			font-size: 24px;
-			margin-bottom: 16px;
-		}
-		.station__name {
-			font-weight: 800;
-		}
+}
+.dust__panel {
+	height: 50%;
+	padding-top: 21%;
+	background: linear-gradient($blue, transparent);
+	.grade__emoji {
+		font-size: 120px;
+		margin-bottom: 24px;
 	}
-	.dust__graph {
-		height: 50%;
+	.grade__text {
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	.dust__value {
+		display: flex;
+		justify-content: space-evenly;
+		font-size: 24px;
+		margin-bottom: 16px;
+	}
+	.station__name {
+		font-weight: 800;
+	}
+}
+.dust__graph {
+	overflow: auto;
+	height: 50%;
+	.graph {
+		height: 20px;
+		display: flex;
+		border-bottom: 1px solid $lighgrey;
+		.bar {
+			max-width: 90%;
+			margin-right: auto;
+		}
+		.value {
+			display: block;
+			max-width: 10%;
+			padding-left: 5px;
+			margin-left: auto;
+			display: flex;
+			align-self: center;
+		}
 	}
 }
