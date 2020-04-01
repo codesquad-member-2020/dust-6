@@ -30,4 +30,25 @@
 			padding: 0 5px;
 		}
 	}
+	.forecast__controls {
+		display: flex;
+		align-items: center;
+		.button {
+			margin: 0 0.5em;
+			font-size: 24px;
+			width: fit-content;
+		}
+		progress {
+			flex: 1;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			height: 0.5em;
+			margin-right: 5px;
+			&::-webkit-progress-value {
+				background-color: $blue;
+				transition: width 0.5s linear;
+			}
+		}
+	}
 }
