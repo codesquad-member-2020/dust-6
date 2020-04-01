@@ -5,6 +5,7 @@ import DustView from "Views/DustView";
 import ForecastView from "Views/ForecastView";
 import DustController from "Controllers/DustController";
 import ForecastController from "Controllers/ForecastController";
+import "Controllers/SwipeController";
 
 const dustModel = new DustModel();
 const forecastModel = new ForecastModel();
