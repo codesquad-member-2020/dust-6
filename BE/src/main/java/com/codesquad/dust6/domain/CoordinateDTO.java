@@ -1,6 +1,6 @@
 package com.codesquad.dust6.domain;
 
-public class Coordinate {
+public class CoordinateDTO {
     private float latitude;
     private float longitude;
 

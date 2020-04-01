@@ -7,11 +7,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Location {
+public class DistanceDTO {
     private String stationName;
     private float tm;
 
-    public Location(String stationName, float tm) {
+    public DistanceDTO(String stationName, float tm) {
         this.stationName = stationName;
         this.tm = tm;
     }
