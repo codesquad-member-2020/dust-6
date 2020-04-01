@@ -16,19 +16,16 @@ class FineDustViewController: UIViewController {
     @IBOutlet weak var timeLabel: MeasurementTimeLabel!
     @IBOutlet weak var stationLabel: StationLabel!
     @IBOutlet weak var dustDensityTableView: DustDensityTableView!
-    
+
     private var dataManager = DataManager()
+    private var dustDensityDataSource = DustDensityDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dustDensityTableView.delegate = self
+        dustDensityTableView.dataSource = dustDensityDataSource
         addObservers()
-        loadData()
-    }
-    
-    private func loadData() {
-        dataManager.loadStation()
-        dataManager.reloadData(with: 0)
+        dataManager.loadData()
     }
 }
 
@@ -41,31 +38,24 @@ extension FineDustViewController: UITableViewDelegate {
 
 extension FineDustViewController {
     private func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTimeLabel(_:)), name: DataManager.timeChanged, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gradeDidChanged(_:)), name: DataManager.gradeChanged, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(valueDidChanged(_:)), name: DataManager.valueChanged, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateStaion(_:)), name: DataManager.stationLoaded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStaion(_:)), name: DataManager.dataLoaded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStatusView(_:)), name: DataManager.loadedIndexData, object: nil)
     }
     
     @objc private func updateStaion(_ notification: NSNotification) {
-        guard let station = notification.userInfo?[DataManager.stationLoaded] as? String else { return }
+        guard let station = notification.userInfo?[DataManager.station] as? String else { return }
         stationLabel.setStation(station)
     }
     
-    @objc private func updateTimeLabel(_ notification: NSNotification) {
-        guard let time = notification.userInfo?[DataManager.timeChanged] as? String else { return }
+    @objc private func updateStatusView(_ notification: NSNotification) {
+        guard let time = notification.userInfo?[DataManager.time] as? String,
+            let grade = notification.userInfo?[DataManager.grade] as? Int,
+            let value = notification.userInfo?[DataManager.value] as? Int
+            else { return }
         timeLabel.setTime(time: time)
-    }
-    
-    @objc private func gradeDidChanged(_ notification: NSNotification) {
-        guard let grade = notification.userInfo?[DataManager.gradeChanged] as? Int else { return }
         statusView.setStatusView(with: grade)
         statusEmoji.setEmoji(with: grade)
         statusLabel.setStatusLabel(with: grade)
-    }
-    
-    @objc private func valueDidChanged(_ notification: NSNotification) {
-        guard let value = notification.userInfo?[DataManager.valueChanged] as? Int else { return }
         densityLabel.setDensity(with: value)
     }
 }

@@ -9,16 +9,23 @@
 import Foundation
 
 class DataManager {
-    static let stationLoaded = NSNotification.Name.init("stationLoaded")
-    static let timeChanged = NSNotification.Name.init("timeChanged")
-    static let gradeChanged = NSNotification.Name.init("gradeChanged")
-    static let valueChanged = NSNotification.Name.init("valueChanged")
+    static let dataLoaded = NSNotification.Name.init("dataLoaded")
+    static let loadedIndexData = NSNotification.Name.init("loadedIndexData")
+    static let station = "station"
+    static let data = "data"
+    static let time = "time"
+    static let grade = "grade"
+    static let value = "value"
     
     private var dustData = MockDustStatus()
     
-    func loadStation() {
+    func loadData() {
         let station = dustData.stationName
-        NotificationCenter.default.post(name: DataManager.stationLoaded, object: nil, userInfo: [DataManager.stationLoaded:station])
+        let data = dustData.data.map { (data) -> (Int, Int) in
+            (data.pm10Grade, data.pm10Value)
+        }
+        NotificationCenter.default.post(name: DataManager.dataLoaded, object: nil, userInfo: [DataManager.station:station, DataManager.data:data])
+        reloadData(with: 0)
     }
     
     func reloadData(with index: Int) {
@@ -26,8 +33,6 @@ class DataManager {
         let time = data.dataTime.components(separatedBy: " ")[1]
         let grade = data.pm10Grade
         let value = data.pm10Value
-        NotificationCenter.default.post(name: DataManager.timeChanged, object: nil, userInfo: [DataManager.timeChanged:time])
-        NotificationCenter.default.post(name: DataManager.gradeChanged, object: nil, userInfo: [DataManager.gradeChanged:grade])
-        NotificationCenter.default.post(name: DataManager.valueChanged, object: nil, userInfo: [DataManager.valueChanged:value])
+        NotificationCenter.default.post(name: DataManager.loadedIndexData, object: nil, userInfo: [DataManager.time:time, DataManager.grade:grade, DataManager.value:value])
     }
 }
