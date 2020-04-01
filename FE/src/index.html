@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>미세미세</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+			}
+			body > * {
+				box-sizing: border-box;
+			}
+			header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 10%;
+				display: flex;
+				align-items: center;
+				background: orchid;
+				z-index: 1;
+			}
+			header ul {
+				list-style: none;
+				padding: 0;
+				width: 100%;
+				display: flex;
+				justify-content: space-evenly;
+			}
+			nav {
+				width: 100%;
+			}
+			ul > li {
+				width: 40%;
+				text-align: center;
+				cursor: pointer;
+			}
+			main {
+				width: 100vw;
+				height: 100vh;
+				position: relative;
+				overflow: hidden;
+			}
+			.container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				width: 200vw;
+				height: 100%;
+				transition: all 0.3s ease-in-out;
+			}
+			.page {
+				width: 100vw;
+				height: 100%;
+				padding: 0 2%;
+				padding-top: 7%;
+			}
+			.dust {
+				background: lightblue;
+			}
+			.forecast {
+				background: lightsalmon;
+			}
+			.big-screen {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: #fce006;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: 600;
+				color: white;
+				font-size: 28px;
+				text-align: center;
+				line-height: 1.5;
+				padding: 0px 20px;
+				display: none;
+				z-index: 4;
+			}
+			@media screen and (min-width: 769px) {
+				.big-screen {
+					display: flex;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="menu">미세먼지</li>
+					<li class="menu">예보</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<div class="page dust" data-title="미세먼지">
+					<h1>미세먼지 앱</h1>
+					<div class="dust__panel">
+						<div class="dust__grade">
+							<div class="grade__emoji">😀</div>
+							<div class="grade__text">좋음</div>
+						</div>
+						<div class="dust__value">
+							<span><span>59</span>𝜇g/m³</span><span>오늘 16:00</span>
+						</div>
+						<div class="dust__station"></div>
+					</div>
+					<div class="dust__graph"></div>
+				</div>
+				<div class="page forecast" data-title="예보">
+					<h1>미세먼지 예보</h1>
+					<div class="forecast__panel">
+						<div class="forecast__image">
+							<img
+								src="http://www.airkorea.or.kr/file/viewImage/?atch_id=56593"
+								alt=""
+								width="100%"
+							/>
+						</div>
+						<div class="forecast__overall">
+							○ [미세먼지] 원활한 대기 확산으로 대기 상태가 '보통' 수준이겠으나, 전일 발원한 황사의
+							영향으로 일부 남서부지역은 늦은 밤에 농도가 다소 높을 것으로 예상됨
+						</div>
+						<div class="forecast__grade">
+							서울 : 보통,제주 : 보통,전남 : 보통,전북 : 보통,광주 : 보통,경남 : 보통,경북 :
+							보통,울산 : 보통,대구 : 보통,부산 : 보통,충남 : 보통,충북 : 보통,세종 : 보통,대전 :
+							보통,영동 : 보통,영서 : 보통,경기남부 : 보통,경기북부 : 보통,인천 : 보통
+						</div>
+					</div>
+					<div class="forecast__controls">
+						<div class="controls__column"><span class="button">▶️</span></div>
+						<div class="controls__column"><progress value="0" max="9"></progress></div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="big-screen">
+			<span class="big-screen__text">Please make your screen small 😉</span>
+		</div>
+	</body>
+</html>
