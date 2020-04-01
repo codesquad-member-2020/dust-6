@@ -1,0 +1,27 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 10%;
+	display: flex;
+	align-items: center;
+	background: #da70d6;
+	z-index: 1;
+	nav {
+		width: 100%;
+		ul {
+			list-style: none;
+			padding: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			li {
+				width: 30%;
+				height: 50%;
+				text-align: center;
+				cursor: pointer;
+			}
+		}
+	}
+}
