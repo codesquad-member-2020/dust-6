@@ -20,16 +20,23 @@
 				<div class="page dust" data-title="미세먼지">
 					<h1>미세먼지 앱</h1>
 					<div class="dust__panel">
-						<div class="dust__grade">
-							<div class="grade__emoji">😀</div>
-							<div class="grade__text">좋음</div>
-						</div>
+						<div class="grade__emoji">😀</div>
+						<div class="grade__text">좋음</div>
 						<div class="dust__value">
 							<span><span>59</span>𝜇g/m³</span><span>오늘 16:00</span>
 						</div>
-						<div class="dust__station"></div>
+						<div class="dust__station"><span class="station__name">강남구</span> 측정소 기준</div>
 					</div>
-					<div class="dust__graph"></div>
+					<div class="dust__graph">
+						<div class="graph">
+							<div class="bar" style="width:20%; background:blue;"></div>
+							<span class="value">56</span>
+						</div>
+						<div class="graph">
+							<div class="bar" style="width:100%; background:orange;"></div>
+							<span class="value">210</span>
+						</div>
+					</div>
 				</div>
 				<div class="page forecast" data-title="예보">
 					<h1>미세먼지 예보</h1>
@@ -52,14 +59,14 @@
 						</div>
 					</div>
 					<div class="forecast__controls">
-						<div class="controls__column"><span class="button">▶️</span></div>
-						<div class="controls__column"><progress value="0" max="9"></progress></div>
+						<span class="button">▶️</span>
+						<progress class="controller" value="5" max="9"></progress>
 					</div>
 				</div>
 			</div>
 		</main>
 		<div class="big-screen">
-			<span class="big-screen__text">Please make your screen small 😉</span>
+			<span class="big-screen__text">Please set your screen width to 375px 😉</span>
 		</div>
 		<script src="static/bundle.js"></script>
 	</body>
