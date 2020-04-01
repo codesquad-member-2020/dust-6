@@ -8,6 +8,6 @@ export default class DustController {
 
 	init() {
 		this.dustView.subscribe();
-		this.dustModel.fetchData();
+		this.dustModel.getGeoLocation();
 	}
 }
