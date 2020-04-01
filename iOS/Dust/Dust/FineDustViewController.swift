@@ -19,20 +19,25 @@ class FineDustViewController: UIViewController {
 
     private var dataManager = DataManager()
     private var dustDensityDataSource = DustDensityDataSource()
+    private var dustDensityTableViewDelegate = GraphTableViewDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dustDensityTableView.delegate = self
+        dustDensityTableViewDelegate.presentingController = self
+        dustDensityTableView.delegate = dustDensityTableViewDelegate
         dustDensityTableView.dataSource = dustDensityDataSource
         addObservers()
         dataManager.loadData()
     }
 }
 
-extension FineDustViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let index = dustDensityTableView.indexPathsForVisibleRows?.first else { return }
-        dataManager.reloadData(with: index.row)
+protocol GraphPresenting {
+    func loadData(with index: Int)
+}
+
+extension FineDustViewController: GraphPresenting {
+    func loadData(with index: Int) {
+        dataManager.reloadData(with: index)
     }
 }
 

@@ -25,6 +25,7 @@
 		446E20EE24322FF1005CFB15 /* DustDensityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */; };
 		446E20F024323E08005CFB15 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20EF24323E08005CFB15 /* DictionaryExtension.swift */; };
 		446FB18C2433122500F5317D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446FB18B2433122500F5317D /* DataManager.swift */; };
+		446FB1902434357D00F5317D /* GraphTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */; };
 		44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9D71A2431E75500087381 /* StatusEmoji.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustDensityDataSource.swift; sourceTree = "<group>"; };
 		446E20EF24323E08005CFB15 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		446FB18B2433122500F5317D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewDelegate.swift; sourceTree = "<group>"; };
 		44E9D71A2431E75500087381 /* StatusEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEmoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				444F831D2431C87000CDEAE3 /* SceneDelegate.swift */,
 				444F831F2431C87000CDEAE3 /* FineDustViewController.swift */,
 				444F83212431C87000CDEAE3 /* ForecastViewController.swift */,
+				446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */,
 				446327A32432FDB300129F89 /* Model */,
 				44E9D7152431D38F00087381 /* Extension */,
 				444F83312431CCC300CDEAE3 /* View */,
@@ -209,6 +212,7 @@
 				44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */,
 				446E20E42431ECF1005CFB15 /* DensityLabel.swift in Sources */,
 				444F83202431C87000CDEAE3 /* FineDustViewController.swift in Sources */,
+				446FB1902434357D00F5317D /* GraphTableViewDelegate.swift in Sources */,
 				446FB18C2433122500F5317D /* DataManager.swift in Sources */,
 				444F831C2431C87000CDEAE3 /* AppDelegate.swift in Sources */,
 				444F831E2431C87000CDEAE3 /* SceneDelegate.swift in Sources */,
