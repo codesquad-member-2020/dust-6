@@ -89,6 +89,7 @@
 				444F831F2431C87000CDEAE3 /* FineDustViewController.swift */,
 				444F83212431C87000CDEAE3 /* ForecastViewController.swift */,
 				446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */,
+				446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */,
 				446327A32432FDB300129F89 /* Model */,
 				44E9D7152431D38F00087381 /* Extension */,
 				444F83312431CCC300CDEAE3 /* View */,
@@ -110,7 +111,6 @@
 				446E20E52432007C005CFB15 /* MeasurementTimeLabel.swift */,
 				446E20E724320600005CFB15 /* StationLabel.swift */,
 				446E20E924322121005CFB15 /* DustDensityTableView.swift */,
-				446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */,
 				446E20EB243228C7005CFB15 /* DustDensityCell.swift */,
 			);
 			path = View;
