@@ -3,14 +3,11 @@ package com.codesquad.dust6.api;
 import com.codesquad.dust6.domain.CoordinateDTO;
 import com.codesquad.dust6.domain.DistanceDTO;
 import com.codesquad.dust6.domain.ResponseDTO;
-import com.codesquad.dust6.utils.PublicApiUtils;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.codesquad.dust6.service.LocationService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.util.List;
 
 @RequestMapping("/api/dust-status")
@@ -19,12 +16,12 @@ public class ApiDustStatusController {
 
     //tm 좌표 기준 가장 가까운 측정소 목록
     @GetMapping("/locations")
-    public Object locations(CoordinateDTO coordinate) throws JsonProcessingException, UnsupportedEncodingException, URISyntaxException {
-        return PublicApiUtils.test();
+    public Object locations(CoordinateDTO coordinate) {
+        return LocationService.locations(coordinate);
     }
 
     @GetMapping("/공공api/측정소목록")
-    public List<DistanceDTO> locations() {
+    public List<DistanceDTO> locationssd() {
         return null;
     }
 
