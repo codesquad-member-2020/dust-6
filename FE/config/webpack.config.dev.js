@@ -9,6 +9,10 @@ const config = {
 	entry: ENTRY_FILE,
 	resolve: {
 		alias: {
+			Models: path.resolve(__dirname, "../src/js/models/"),
+			Controllers: path.resolve(__dirname, "../src/js/controllers/"),
+			Views: path.resolve(__dirname, "../src/js/views/"),
+			Utils: path.resolve(__dirname, "../src/js/utils/"),
 			Scss: path.resolve(__dirname, "../src/scss/")
 		}
 	},
