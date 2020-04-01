@@ -1,5 +1,5 @@
-import Observable from "../utils/Observable";
-import mockData from "../utils/mockData";
+import Observable from "Utils/Observable";
+import mockData from "Utils/mockData";
 
 export default class ForecastModel extends Observable {
 	constructor() {

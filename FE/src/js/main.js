@@ -1,10 +1,10 @@
 import "Scss/styles.scss";
-import DustModel from "./models/DustModel";
-import ForecastModel from "./models/ForecastModel";
-import DustView from "./views/DustView";
-import ForecastView from "./views/ForecastView";
-import DustController from "./controllers/DustController";
-import ForecastController from "./controllers/ForecastController";
+import DustModel from "Models/DustModel";
+import ForecastModel from "Models/ForecastModel";
+import DustView from "Views/DustView";
+import ForecastView from "Views/ForecastView";
+import DustController from "Controllers/DustController";
+import ForecastController from "Controllers/ForecastController";
 
 const dustModel = new DustModel();
 const forecastModel = new ForecastModel();
