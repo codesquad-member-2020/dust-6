@@ -22,7 +22,8 @@ class DustDensityDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DustDensityCell", for: indexPath) as! DustDensityCell
-        cell.configureCell(with: data?[indexPath.row].1 ?? 0)
+        guard let data = data, data.count > indexPath.row else { return cell }
+        cell.configureCell(value: data[indexPath.row].1, grade: data[indexPath.row].0)
         return cell
     }
 }
