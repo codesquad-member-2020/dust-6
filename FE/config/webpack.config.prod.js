@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const ENTRY_FILE = path.resolve(__dirname, "../src", "js", "main.js");
-const OUTPUT_DIR = path.resolve(__dirname, "../../BE/src/main/resources/build");
+const OUTPUT_DIR = path.resolve(__dirname, "../build");
 
 const config = {
 	mode: "production",
