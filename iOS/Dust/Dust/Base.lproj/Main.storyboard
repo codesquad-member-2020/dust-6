@@ -188,6 +188,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="예보" image="clock.fill" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="forecastGrade" destination="5QY-y0-ovy" id="Wwl-Rn-ZJg"/>
+                        <outlet property="forecastOverall" destination="i2v-Gz-fU7" id="IHQ-6g-I2e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
