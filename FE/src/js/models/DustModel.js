@@ -6,9 +6,11 @@ import { OBSERVER_TYPE_LIST } from "Utils/const";
 export default class DustModel extends Observable {
 	constructor() {
 		super();
+		this.displayedData = null;
 	}
 
 	getGeoLocation() {
+		this.displayedData = mockData.dust.data[0];
 		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
 		// if (navigator.geolocation) {
 		// 	const options = {
@@ -44,4 +46,6 @@ export default class DustModel extends Observable {
 		const noGpsScreen = document.querySelector(".no-gps");
 		noGpsScreen.style.display = "flex";
 	}
+
+	updateDisplayedData() {}
 }

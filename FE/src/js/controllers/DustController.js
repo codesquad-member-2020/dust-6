@@ -4,7 +4,7 @@ export default class DustController {
 		this.dustView = dustView;
 	}
 
-	barGraphHandler() {}
+	barGraphScrollHandler() {}
 
 	init() {
 		this.dustView.subscribe();

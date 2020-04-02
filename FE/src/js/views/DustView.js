@@ -15,4 +15,7 @@ export default class DustView {
 		const dustPage = dust`${data}`;
 		container.insertAdjacentHTML("afterbegin", dustPage);
 	}
+
+	updateDustPanelView(data) {}
+	bindOnScrollListener(hanler) {}
 }
