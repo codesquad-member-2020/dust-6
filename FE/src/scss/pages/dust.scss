@@ -1,0 +1,64 @@
+.dust {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	* {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.dust__panel {
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	margin-bottom: 1em;
+	h1 {
+		font-size: 27px;
+		font-weight: bold;
+		margin: 20px auto;
+	}
+	.grade__emoji {
+		font-size: 130px;
+		margin-bottom: 10px;
+	}
+	.grade__text {
+		font-size: 22px;
+		font-weight: bold;
+		margin-bottom: 0.5em;
+	}
+	.dust__details {
+		display: flex;
+		padding-right: 1.2em;
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 14px;
+	}
+	.station__name {
+		font-weight: 800;
+	}
+}
+
+.dust__graph {
+	overflow: auto;
+	flex: 1;
+	.bar-container {
+		height: 20px;
+		display: flex;
+		border-bottom: 1px solid $lightgrey;
+		.bar {
+			max-width: 90%;
+			margin-right: auto;
+		}
+		.value {
+			display: block;
+			max-width: 10%;
+			padding-left: 5px;
+			margin-left: auto;
+			display: flex;
+			align-self: center;
+		}
+	}
+}
