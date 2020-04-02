@@ -2,6 +2,7 @@ package com.codesquad.dust6.api;
 
 import com.codesquad.dust6.domain.CoordinateDTO;
 import com.codesquad.dust6.domain.DistanceDTO;
+import com.codesquad.dust6.domain.MeasureDensityDTO;
 import com.codesquad.dust6.domain.ResponseDTO;
 import com.codesquad.dust6.service.LocationService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,7 @@ public class ApiDustStatusController {
 
     //측정소의 미세먼지 상태
     @GetMapping("location")
-    public ResponseDTO getStatus(CoordinateDTO coordinate) {
-        return null;
+    public Object getStatus(CoordinateDTO coordinate) throws URISyntaxException {
+        return LocationService.dustStatus();
     }
 }

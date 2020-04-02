@@ -2,15 +2,14 @@ package com.codesquad.dust6.service;
 
 import com.codesquad.dust6.domain.DistanceDTO;
 import com.codesquad.dust6.domain.MeasureDensityDTO;
+import com.codesquad.dust6.utils.JsonUtils;
 import com.codesquad.dust6.utils.PublicInstitutionUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.client.RestTemplate;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +22,10 @@ public class LocationService {
     private static Logger logger = LoggerFactory.getLogger(LocationService.class);
 
     public static List<DistanceDTO> distances() throws URISyntaxException {
-        URI uri = new URI(PublicInstitutionUtils.BASE_URL + PublicInstitutionUtils.LOCATIONS_URL + "tmX=244148.546388&tmY=412423.75772" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE);
-        String data = restTemplate.getForObject(uri, String.class);
+        String url = PublicInstitutionUtils.BASE_URL + PublicInstitutionUtils.LOCATIONS_URL + "tmX=244148.546388&tmY=412423.75772" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE;
+        String data = JsonUtils.datas(url);
 
-        List<DistanceDTO> distances = new ArrayList<>();;
+        List<DistanceDTO> distances = new ArrayList<>();
 
         JSONArray jsonArray = new JSONObject(data).getJSONArray("list");
 
@@ -44,33 +43,21 @@ public class LocationService {
         return distances().get(0);
     }
 
-    public static MeasureDensityDTO dustStatus() throws URISyntaxException {
-        "/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?&ServiceKey=서비스키&ver=1.3"
-        distance();
-        URI uri = new URI(PublicInstitutionUtils.BASE_URL + PublicInstitutionUtils.MEASURE_DENSITY_URL + "stationName=종로구&dataTerm=month&pageNo=1&numOfRows=10" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE + PublicInstitutionUtils.VERSION);
-        String data = restTemplate.getForObject(uri, String.class);
-    }
+    public static Object dustStatus() throws URISyntaxException {
+        String url = PublicInstitutionUtils.BASE_URL + PublicInstitutionUtils.MEASURE_DENSITY_URL + "stationName=" + "종로구" + "&dataTerm=month&pageNo=1&numOfRows=10" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE + PublicInstitutionUtils.VERSION;
+        String data = JsonUtils.datas(url);
 
+        List<MeasureDensityDTO> measureDensities = new ArrayList<>();
 
-/*    public static Object locations() throws URISyntaxException, IOException {
-        BufferedReader br = null;
+        JSONArray jsonArray = new JSONObject(data).getJSONArray("list");
 
-        URL url = new URL(PublicInstitutionUtils.URL
-                + "tmX=" + 1.0f
-                + "&tmY=" + 2.0f
-                + "&serviceKey=" + PublicInstitutionUtils.SERVICE_KEY
-                + "&_returnType=" + PublicInstitutionUtils.RETURN_TYPE);
-
-        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        urlConnection.setRequestMethod("GET");
-        br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), StandardCharsets.UTF_8));
-        String result = "";
-        String line;
-        while ((line = br.readLine()) != null) {
-            result += line + "\n";
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            String dataTime = jsonObject.get("dataTime").toString();
+            int pm10Value = Integer.parseInt(jsonObject.get("pm10Value").toString());
+            int pm10Grade = Integer.parseInt(jsonObject.get("pm10Grade").toString());
+            measureDensities.add(new MeasureDensityDTO(dataTime, pm10Value, pm10Grade));
         }
-        logger.debug("result : {} ", result);
-
-        return result;
-    }*/
+        return measureDensities;
+    }
 }
