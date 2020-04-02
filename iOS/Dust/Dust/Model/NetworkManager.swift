@@ -23,4 +23,8 @@ class NetworkManager {
         request.httpMethod = "GET"
         session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
+    
+    static func loadDataFrom(url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        session.dataTask(with: url, completionHandler: completionHandler).resume()
+    }
 }
