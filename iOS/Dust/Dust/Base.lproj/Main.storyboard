@@ -132,14 +132,33 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forecast" translatesAutoresizingMaskIntoConstraints="NO" id="Jbm-tE-QIU">
                                 <rect key="frame" x="0.0" y="104" width="414" height="401"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○ [미세먼지] 수도권·충청권·광주·전북은 ‘나쁨’, 그 밖의 권역은 ‘보통’으로 예상됨. 다만, 강원영서·대구는 오전에 ‘나쁨’ 수준일 것으로 예상됨." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-Gz-fU7">
+                                <rect key="frame" x="15" y="509" width="384" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-y0-ovy">
+                                <rect key="frame" x="15" y="553" width="384" height="36"/>
+                                <string key="text">서울 : 보통,제주 : 좋음,전남 : 좋음,전북 : 보통,광주 : 좋음,경남 : 좋음,경북 : 보통,울산 : 좋음,대구 : 보통,부산 : 좋음,충남 : 보통,충북 : 보통,세종 : 보통,대전 : 보통,영동 : 좋음,영서 : 보통,경기남부 : 보통,경기북부 : 보통,인천 : 보통</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tuR-j4-eBX" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="0wi-Hw-LOf"/>
+                            <constraint firstItem="i2v-Gz-fU7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="2G0-Wp-Bz3"/>
+                            <constraint firstItem="i2v-Gz-fU7" firstAttribute="top" secondItem="Jbm-tE-QIU" secondAttribute="bottom" constant="4" id="8Ue-rM-YT1"/>
                             <constraint firstItem="Jbm-tE-QIU" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="FZZ-Uj-XZ2"/>
                             <constraint firstItem="Jbm-tE-QIU" firstAttribute="top" secondItem="tuR-j4-eBX" secondAttribute="bottom" constant="8" id="KNT-4u-gWF"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Jbm-tE-QIU" secondAttribute="trailing" id="V4m-l2-EwQ"/>
                             <constraint firstItem="tuR-j4-eBX" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="16" id="ZSS-QM-ZaE"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="5QY-y0-ovy" secondAttribute="trailing" constant="15" id="gOB-Kg-WzP"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="i2v-Gz-fU7" secondAttribute="trailing" constant="15" id="r2D-HX-cul"/>
+                            <constraint firstItem="5QY-y0-ovy" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="stG-Yg-Uuc"/>
+                            <constraint firstItem="5QY-y0-ovy" firstAttribute="top" secondItem="i2v-Gz-fU7" secondAttribute="bottom" constant="15" id="wcK-PN-vnA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
