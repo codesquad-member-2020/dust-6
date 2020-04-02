@@ -1,10 +1,12 @@
 package com.codesquad.dust6.service;
 
-import com.codesquad.dust6.domain.DistanceDTO;
 import com.codesquad.dust6.utils.PublicInstitutionUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jdk.nashorn.internal.parser.JSONParser;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
@@ -17,9 +19,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class LocationService {
 
@@ -29,11 +28,19 @@ public class LocationService {
 
     private static Logger logger = LoggerFactory.getLogger(LocationService.class);
 
-    public static Object test() throws URISyntaxException, JsonProcessingException {
+    public static Object test() throws URISyntaxException, JsonProcessingException, ParseException {
         URI uri = new URI(PublicInstitutionUtils.URL + "?tmX=244148.546388&tmY=412423.75772" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE);
         String json = restTemplate.getForObject(uri, String.class);
 
-        return null;
+        JSONParser jsonParser = new JSONParser();
+
+        //JSONParse에 JSON 데이터를 넣어 파싱한 다음 JSONObject로 변환한다
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(json);
+
+        //JSONObjet에서 List를 Get하여 JSONArray에 저장한다
+        JSONArray distances = (JSONArray) jsonObject.get("list");
+
+        return distances.toJSONString();
     }
 
 

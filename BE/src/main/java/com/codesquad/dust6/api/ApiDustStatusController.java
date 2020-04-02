@@ -4,6 +4,8 @@ import com.codesquad.dust6.domain.CoordinateDTO;
 import com.codesquad.dust6.domain.DistanceDTO;
 import com.codesquad.dust6.domain.ResponseDTO;
 import com.codesquad.dust6.service.LocationService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +20,7 @@ public class ApiDustStatusController {
 
     //tm 좌표 기준 가장 가까운 측정소 목록
     @GetMapping("/locations")
-    public Object locations() throws URISyntaxException, IOException {
+    public Object locations() throws ParseException, JsonProcessingException, URISyntaxException {
         return LocationService.test();
     }
 
