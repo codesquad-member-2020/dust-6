@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -145,18 +146,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-yO-Chd">
+                                <rect key="frame" x="15" y="616" width="384" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PZ-ec-Qbs" customClass="PlayButton" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="3uK-mS-XYl"/>
+                                            <constraint firstAttribute="height" constant="44" id="bmN-8V-aIS"/>
+                                        </constraints>
+                                        <state key="normal" image="play.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-o6-xWh">
+                                        <rect key="frame" x="82" y="0.0" width="304" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="8uL-J4-m8u"/>
+                                        </constraints>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tuR-j4-eBX" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="0wi-Hw-LOf"/>
                             <constraint firstItem="i2v-Gz-fU7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="2G0-Wp-Bz3"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="aA8-yO-Chd" secondAttribute="trailing" constant="15" id="3xf-cC-x3J"/>
                             <constraint firstItem="i2v-Gz-fU7" firstAttribute="top" secondItem="Jbm-tE-QIU" secondAttribute="bottom" constant="4" id="8Ue-rM-YT1"/>
                             <constraint firstItem="Jbm-tE-QIU" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="FZZ-Uj-XZ2"/>
                             <constraint firstItem="Jbm-tE-QIU" firstAttribute="top" secondItem="tuR-j4-eBX" secondAttribute="bottom" constant="8" id="KNT-4u-gWF"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Jbm-tE-QIU" secondAttribute="trailing" id="V4m-l2-EwQ"/>
                             <constraint firstItem="tuR-j4-eBX" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="16" id="ZSS-QM-ZaE"/>
+                            <constraint firstItem="aA8-yO-Chd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="ZjY-BQ-QCu"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="5QY-y0-ovy" secondAttribute="trailing" constant="15" id="gOB-Kg-WzP"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="i2v-Gz-fU7" secondAttribute="trailing" constant="15" id="r2D-HX-cul"/>
+                            <constraint firstItem="aA8-yO-Chd" firstAttribute="top" secondItem="5QY-y0-ovy" secondAttribute="bottom" constant="27" id="sYI-jG-GIb"/>
                             <constraint firstItem="5QY-y0-ovy" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="stG-Yg-Uuc"/>
                             <constraint firstItem="5QY-y0-ovy" firstAttribute="top" secondItem="i2v-Gz-fU7" secondAttribute="bottom" constant="15" id="wcK-PN-vnA"/>
                         </constraints>
@@ -190,6 +215,7 @@
     <resources>
         <image name="clock.fill" width="17" height="17"/>
         <image name="forecast" width="344.5" height="401"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="smoke.fill" width="19" height="14"/>
     </resources>
 </document>
