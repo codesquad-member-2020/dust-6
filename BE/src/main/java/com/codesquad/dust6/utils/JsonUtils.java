@@ -6,7 +6,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class JsonUtils {
-
     private static final RestTemplate restTemplate = new RestTemplate();
 
     public static String data(String url) throws URISyntaxException {
