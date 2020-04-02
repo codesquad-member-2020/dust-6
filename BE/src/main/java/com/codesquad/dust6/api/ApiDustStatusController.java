@@ -23,15 +23,13 @@ public class ApiDustStatusController {
     }
 
     //측정소 목록 중 가장 가까운 측정소 1개
-    @GetMapping("/location")
     public String location() throws IOException, URISyntaxException {
         return LocationService.distance().getStationName();
     }
 
     //측정소의 미세먼지 상태
-    @GetMapping("")
+    @GetMapping("location")
     public ResponseDTO getStatus(CoordinateDTO coordinate) {
         return null;
-//        return "redirect:/공공api/측정소_이름";
     }
 }
