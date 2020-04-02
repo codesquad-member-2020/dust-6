@@ -1,5 +1,6 @@
 import Observable from "Utils/Observable";
 import Http from "Utils/http";
+import mockData from "Utils/mockData";
 
 export default class DustModel extends Observable {
 	constructor() {
@@ -7,20 +8,21 @@ export default class DustModel extends Observable {
 	}
 
 	getGeoLocation() {
-		if (navigator.geolocation) {
-			const options = {
-				enableHighAccuracy: true,
-				maximumAge: 0,
-				timeout: Infinity
-			};
-			navigator.geolocation.getCurrentPosition(
-				this.success.bind(this),
-				this.error.bind(this),
-				options
-			);
-		} else {
-			this.showNoGpsScreen();
-		}
+		this.notify(mockData.dust);
+		// if (navigator.geolocation) {
+		// 	const options = {
+		// 		enableHighAccuracy: true,
+		// 		maximumAge: 0,
+		// 		timeout: Infinity
+		// 	};
+		// 	navigator.geolocation.getCurrentPosition(
+		// 		this.success.bind(this),
+		// 		this.error.bind(this),
+		// 		options
+		// 	);
+		// } else {
+		// 	this.showNoGpsScreen();
+		// }
 	}
 
 	success(position) {

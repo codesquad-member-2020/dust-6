@@ -1,3 +1,5 @@
+import { dust } from "./template";
+
 export default class DustView {
 	constructor(dustModel) {
 		this.dustModel = dustModel;
@@ -8,6 +10,8 @@ export default class DustView {
 	}
 
 	showLatestData(data) {
-		console.log("dustView notified! ", data);
+		const container = document.querySelector(".container");
+		const dustPage = dust`${data}`;
+		container.insertAdjacentHTML("afterbegin", dustPage);
 	}
 }
