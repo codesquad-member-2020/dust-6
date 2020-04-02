@@ -28,7 +28,7 @@ public class LocationService {
 
     private static Logger logger = LoggerFactory.getLogger(LocationService.class);
 
-    public static List<DistanceDTO> test() throws URISyntaxException {
+    public static List<DistanceDTO> distances() throws URISyntaxException {
         URI uri = new URI(PublicInstitutionUtils.URL + "tmX=244148.546388&tmY=412423.75772" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE);
         String data = restTemplate.getForObject(uri, String.class);
 
@@ -46,8 +46,11 @@ public class LocationService {
         return distances;
     }
 
+    public static DistanceDTO distance() throws URISyntaxException {
+        return distances().get(0);
+    }
 
-    public static Object locations() throws URISyntaxException, IOException {
+/*    public static Object locations() throws URISyntaxException, IOException {
         BufferedReader br = null;
 
         URL url = new URL(PublicInstitutionUtils.URL
@@ -67,5 +70,5 @@ public class LocationService {
         logger.debug("result : {} ", result);
 
         return result;
-    }
+    }*/
 }
