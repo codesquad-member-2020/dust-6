@@ -9,7 +9,7 @@ public class JsonUtils {
 
     private static final RestTemplate restTemplate = new RestTemplate();
 
-    public static String datas(String url) throws URISyntaxException {
+    public static String data(String url) throws URISyntaxException {
         URI uri = new URI(url);
         return restTemplate.getForObject(uri, String.class);
     }
