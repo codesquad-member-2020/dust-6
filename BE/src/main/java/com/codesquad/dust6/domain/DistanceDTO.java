@@ -9,9 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DistanceDTO {
     private String stationName;
-    private float tm;
+    private double tm;
 
-    public DistanceDTO(String stationName, float tm) {
+    public DistanceDTO(String stationName, double tm) {
         this.stationName = stationName;
         this.tm = tm;
     }
@@ -24,11 +24,11 @@ public class DistanceDTO {
         this.stationName = stationName;
     }
 
-    public float getTm() {
+    public double getTm() {
         return tm;
     }
 
-    public void setTm(float tm) {
+    public void setTm(double tm) {
         this.tm = tm;
     }
 }
