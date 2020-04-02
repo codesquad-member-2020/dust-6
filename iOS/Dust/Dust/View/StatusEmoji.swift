@@ -18,16 +18,10 @@ class StatusEmoji: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setProperties()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setProperties()
-    }
-    
-    private func setProperties() {
-        self.text = State.good.rawValue
     }
     
     func setEmoji(with grade: Int) {

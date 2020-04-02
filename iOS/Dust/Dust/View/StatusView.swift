@@ -23,10 +23,12 @@ class StatusView: UIView {
     
     private func setProperties() {
         gradientLayer.frame = self.bounds
+        setStatusView(with: 0)
     }
     
     func setStatusView(with grade: Int) {
-        let colorGrading: [Int: [CGColor]] = [1: [UIColor.systemBlue.cgColor, UIColor.white.cgColor],
+        let colorGrading: [Int: [CGColor]] = [0: [UIColor.systemRed.cgColor, UIColor.systemOrange.cgColor, UIColor.systemYellow.cgColor, UIColor.systemGreen.cgColor, UIColor.systemBlue.cgColor, UIColor.systemIndigo.cgColor, UIColor.systemPurple.cgColor],
+                                              1: [UIColor.systemBlue.cgColor, UIColor.white.cgColor],
                                               2: [UIColor.systemGreen.cgColor, UIColor.white.cgColor],
                                               3: [UIColor.systemOrange.cgColor, UIColor.white.cgColor],
                                               4: [UIColor.systemRed.cgColor, UIColor.white.cgColor]]
