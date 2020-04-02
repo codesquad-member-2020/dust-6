@@ -2,25 +2,42 @@ package com.codesquad.dust6.api;
 
 import com.codesquad.dust6.domain.OverallDTO;
 import com.codesquad.dust6.domain.ResponseDTO;
+import com.codesquad.dust6.utils.JsonUtils;
+import com.codesquad.dust6.utils.PublicInstitutionUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.codesquad.dust6.utils.JsonUtils.data;
+import static com.codesquad.dust6.utils.PublicInstitutionUtils.*;
 
 @RestController
 public class ApiForecastController {
 
     @GetMapping("/api/dust/forecast")
-    public ResponseDTO forecast() {
-        List<String> imageUrls = new ArrayList<>();
-        imageUrls.add("http://www.airkorea.or.kr/file/viewImage/?atch_id=56593");
-        imageUrls.add("http://www.airkorea.or.kr/file/viewImage/?atch_id=565235");
-        imageUrls.add("http://www.airkorea.or.kr/file/viewImage/?atch_id=5346");
+    public ResponseDTO forecast() throws URISyntaxException {
+        String today = LocalDate.now().toString();
+        String url = BASE_URL + FORECAST_URL
+                + "searchDate=" + today + SERVICE_KEY_AND_RETURN_TYPE;
+        String response = data(url);
+        JSONObject forecastObject = new JSONObject(response).getJSONArray("list").getJSONObject(0);
 
-        String informOverall = "○[미세먼지] 전 권역의 농도가 전일보다 다소 낮을 것으로 예상됨.";
-        String informGrade = "서울 : 예보없음,제주 : 예보없음,전남 : 예보없음,전북 : 예보없음";
+        List<String> imageUrls = new ArrayList<>();
+
+        for (int i = 1; i < 4; i++) {
+            String imageUrl = forecastObject.get("imageUrl" + i).toString();
+            imageUrls.add(imageUrl);
+        }
+
+        String informOverall = forecastObject.get("informOverall").toString();
+        String informGrade = forecastObject.get("informGrade").toString();
 
         OverallDTO data = new OverallDTO(imageUrls, informOverall, informGrade);
 

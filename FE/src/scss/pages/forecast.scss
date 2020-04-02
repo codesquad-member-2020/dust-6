@@ -1,0 +1,63 @@
+.forecast {
+	height: 100%;
+	* {
+		width: 100%;
+		text-align: justify;
+		line-height: 1.3em;
+	}
+}
+
+.forecast__panel {
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: fit-content;
+	margin-bottom: 20px;
+	h1 {
+		font-size: 27px;
+		font-weight: bold;
+		text-align: center;
+		margin: 20px auto;
+	}
+	.forecast__image {
+		position: relative;
+		img {
+			position: absolute;
+		}
+	}
+	.forecast__controls {
+		margin-top: 425px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		padding: 0 0.4em 0 0.2em;
+		margin-bottom: 1em;
+		.button {
+			font-size: 30px;
+			width: fit-content;
+			margin-right: 0.3em;
+		}
+		progress {
+			flex: 1;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			height: 0.5em;
+			&::-webkit-progress-value {
+				background-color: $blue;
+				transition: width 0.5s linear;
+			}
+		}
+	}
+	.forecast__overall {
+		margin-bottom: 16px;
+		font-weight: bold;
+		padding: 0 5px;
+	}
+	.forecast__grade {
+		font-size: 13px;
+		padding: 0 5px;
+	}
+}
