@@ -9,23 +9,17 @@
 import UIKit
 
 class DensityLabel: UILabel {
-    private var density = 5
+    private var density = 0
     private var output: String {
         return "\(density) 𝜇g/m³"
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setProperties()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setProperties()
-    }
-    
-    private func setProperties() {
-        self.text = output
     }
     
     func setDensity(with value: Int) {
