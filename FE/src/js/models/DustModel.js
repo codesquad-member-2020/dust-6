@@ -6,7 +6,7 @@ import { OBSERVER_TYPE_LIST } from "Utils/const";
 export default class DustModel extends Observable {
 	constructor() {
 		super();
-		this.displayedData = null;
+		this.indexOfCurrentData = 0;
 	}
 
 	getGeoLocation() {
@@ -47,5 +47,8 @@ export default class DustModel extends Observable {
 		noGpsScreen.style.display = "flex";
 	}
 
-	updateDisplayedData() {}
+	updateDisplayedData(index) {
+		this.indexOfCurrentData = index;
+		this.notify({ type: OBSERVER_TYPE_LIST.SCROLL, data: index });
+	}
 }
