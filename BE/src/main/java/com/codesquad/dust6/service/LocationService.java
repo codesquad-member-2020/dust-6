@@ -30,11 +30,14 @@ public class LocationService {
         String data = JsonUtils.data(url);
         List<DistanceDTO> distances = new ArrayList<>();
 
+        logger.debug("data : {}", data);
+
         JSONArray jsonArray = new JSONObject(data).getJSONArray("list");
+
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             String stationName = jsonObject.get("stationName").toString();
-            float tm = Float.parseFloat(jsonObject.get("tm").toString());
+            double tm = Double.parseDouble(jsonObject.get("tm").toString());
             distances.add(new DistanceDTO(stationName, tm));
         }
         return distances;
@@ -45,7 +48,7 @@ public class LocationService {
     }
   
     public static Object dustStatus(String stationName) throws URISyntaxException {
-        String url = BASE_URL + MEASURE_DENSITY_URL + "stationName=" + stationName + TIME_AND_PRINT_COUNT + SERVICE_KEY_AND_RETURN_TYPE + VERSION;
+        String url = BASE_URL + MEASURE_DENSITY_URL + "stationName=" + stationName + TIME_AND_PRINT_COUNT + SERVICE_KEY_AND_RETURN_TYPE;
         String data = JsonUtils.data(url);
         List<MeasureDensityDTO> measureDensities = new ArrayList<>();
         JSONArray jsonArray = new JSONObject(data).getJSONArray("list");
@@ -62,17 +65,22 @@ public class LocationService {
     public static CoordinateDTO coordinate(CoordinateDTO coordinate) throws IOException {
         StringBuilder urlbuilder = new StringBuilder(KAKAO_API_URL);
       
-        urlbuilder.append("?x=" + coordinate.getLatitude())
-                .append("&y=" + coordinate.getLongitude())
+        urlbuilder.append("?x=" + coordinate.getLongitude())
+                .append("&y=" + coordinate.getLatitude())
                 .append(INPUT_AND_OUTPUT_TYPE);
+
         URL url = new URL(urlbuilder.toString());
+
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Authorization", KAKAO_API_KEY);
+
         BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
       
         StringBuilder sb = new StringBuilder();
         String line;
+        
         while ((line = rd.readLine()) != null) {
             sb.append(line);
         }
@@ -84,10 +92,11 @@ public class LocationService {
 
         JSONObject json = new JSONObject(result);
         JSONArray jsonArray = (JSONArray) json.get("documents");
+
         JSONObject jsonObject = jsonArray.getJSONObject(0);
 
-        float longitude = Float.parseFloat(jsonObject.get("x").toString());
-        float latitude = Float.parseFloat(jsonObject.get("y").toString());
+        double longitude = Double.parseDouble(jsonObject.get("x").toString());
+        double latitude = Double.parseDouble(jsonObject.get("y").toString());
 
         return new CoordinateDTO(longitude, latitude);
     }

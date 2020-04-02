@@ -21,6 +21,7 @@ public class ApiDustStatusController {
     @GetMapping("/locations")
     public Object locations(CoordinateDTO coordinate) throws IOException, URISyntaxException {
         CoordinateDTO tmCoordinate = LocationService.coordinate(coordinate);
+        logger.debug("tmCoordinate : {}", tmCoordinate);
         return LocationService.distances(tmCoordinate);
     }
   
