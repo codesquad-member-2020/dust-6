@@ -31,3 +31,7 @@ function graph(data) {
 	}, "");
 	return `<div class="dust__graph">${graphs}</div>`;
 }
+
+export function forecast(_, { imageUrls, informOverall, informGrade }) {
+	console.log(imageUrls, informOverall, informGrade);
+}
