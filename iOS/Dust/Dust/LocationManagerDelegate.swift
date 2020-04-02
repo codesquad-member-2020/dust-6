@@ -23,8 +23,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinate = manager.location?.coordinate else { return }
-                print(coordinate.latitude, "  ", coordinate.longitude)
-
+        presentingController?.locationManagerDidupdate(latitude: "\(coordinate.latitude)", longitude: "\(coordinate.longitude)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

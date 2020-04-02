@@ -44,10 +44,15 @@ extension FineDustViewController: GraphPresenting {
 }
 
 protocol LocationPresenting {
+    func locationManagerDidupdate(latitude: String, longitude: String)
     func locationManagerDidFail(with errorMessage: String)
 }
 
 extension FineDustViewController: LocationPresenting {
+    func locationManagerDidupdate(latitude: String, longitude: String) {
+        dataManager.setDustStatusData(latitude: latitude, longitude: longitude)
+    }
+    
     func locationManagerDidFail(with errorMessage: String) {
         let alert = UIAlertController(title: "위치정보 사용 불가능", message: errorMessage, preferredStyle: .alert)
         let settingsAction = UIAlertAction(title: "설정", style: .default) { (_) -> Void in
@@ -72,6 +77,7 @@ extension FineDustViewController {
     @objc private func updateStaion(_ notification: NSNotification) {
         guard let station = notification.userInfo?[DataManager.station] as? String else { return }
         stationLabel.setStation(station)
+        dustDensityTableView.reloadData()
     }
     
     @objc private func updateStatusView(_ notification: NSNotification) {
