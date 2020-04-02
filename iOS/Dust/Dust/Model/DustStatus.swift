@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct DustStatus {
+struct DustStatus: Codable {
     var stationName: String
     var data: [DustData]
     
-    struct DustData {
+    struct DustData: Codable {
         var dataTime: String
-        var pm10Value: String
-        var pm10Grade: String
+        var pm10Value: Int
+        var pm10Grade: Int
     }
 }
 
