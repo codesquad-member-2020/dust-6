@@ -19,7 +19,7 @@ public class ApiDustStatusController {
     //tm 좌표 기준 가장 가까운 측정소 목록
     @GetMapping("/locations")
     public Object locations() throws URISyntaxException, IOException {
-        return LocationService.locations();
+        return LocationService.test();
     }
 
     @GetMapping("/공공api/측정소목록")
