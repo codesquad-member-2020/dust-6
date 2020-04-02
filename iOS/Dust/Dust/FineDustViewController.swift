@@ -20,10 +20,12 @@ class FineDustViewController: UIViewController {
     private var dataManager = DataManager()
     private var dustDensityDataSource = DustDensityDataSource()
     private var dustDensityTableViewDelegate = GraphTableViewDelegate()
+    private var locationManager = LocationManagerDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dustDensityTableViewDelegate.presentingController = self
+        locationManager.presentingController = self
         dustDensityTableView.delegate = dustDensityTableViewDelegate
         dustDensityTableView.dataSource = dustDensityDataSource
         addObservers()
@@ -39,6 +41,14 @@ extension FineDustViewController: GraphPresenting {
     func loadData(with index: Int) {
         dataManager.reloadData(with: index)
     }
+}
+
+protocol LocationPresenting {
+    
+}
+
+extension FineDustViewController: LocationPresenting {
+    
 }
 
 extension FineDustViewController {

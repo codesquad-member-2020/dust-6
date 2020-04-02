@@ -26,6 +26,7 @@
 		446E20F024323E08005CFB15 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E20EF24323E08005CFB15 /* DictionaryExtension.swift */; };
 		446FB18C2433122500F5317D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446FB18B2433122500F5317D /* DataManager.swift */; };
 		446FB1902434357D00F5317D /* GraphTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */; };
+		44E36D502434E59C00879AD2 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E36D4F2434E59C00879AD2 /* LocationManagerDelegate.swift */; };
 		44E9D71B2431E75500087381 /* StatusEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9D71A2431E75500087381 /* StatusEmoji.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		446E20EF24323E08005CFB15 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		446FB18B2433122500F5317D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewDelegate.swift; sourceTree = "<group>"; };
+		44E36D4F2434E59C00879AD2 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		44E9D71A2431E75500087381 /* StatusEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEmoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				444F831F2431C87000CDEAE3 /* FineDustViewController.swift */,
 				444F83212431C87000CDEAE3 /* ForecastViewController.swift */,
 				446FB18F2434357D00F5317D /* GraphTableViewDelegate.swift */,
+				44E36D4F2434E59C00879AD2 /* LocationManagerDelegate.swift */,
 				446E20ED24322FF1005CFB15 /* DustDensityDataSource.swift */,
 				446327A32432FDB300129F89 /* Model */,
 				44E9D7152431D38F00087381 /* Extension */,
@@ -215,6 +218,7 @@
 				446FB1902434357D00F5317D /* GraphTableViewDelegate.swift in Sources */,
 				446FB18C2433122500F5317D /* DataManager.swift in Sources */,
 				444F831C2431C87000CDEAE3 /* AppDelegate.swift in Sources */,
+				44E36D502434E59C00879AD2 /* LocationManagerDelegate.swift in Sources */,
 				444F831E2431C87000CDEAE3 /* SceneDelegate.swift in Sources */,
 				446E20EC243228C7005CFB15 /* DustDensityCell.swift in Sources */,
 				446E20F024323E08005CFB15 /* DictionaryExtension.swift in Sources */,
