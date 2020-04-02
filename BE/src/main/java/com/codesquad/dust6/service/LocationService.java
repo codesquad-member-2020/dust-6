@@ -43,8 +43,8 @@ public class LocationService {
         return distances().get(0);
     }
 
-    public static Object dustStatus() throws URISyntaxException {
-        String url = PublicInstitutionUtils.BASE_URL + PublicInstitutionUtils.MEASURE_DENSITY_URL + "stationName=" + "종로구" + "&dataTerm=month&pageNo=1&numOfRows=10" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE + PublicInstitutionUtils.VERSION;
+    public static Object dustStatus(String stationName) throws URISyntaxException {
+        String url = PublicInstitutionUtils.BASE_URL + PublicInstitutionUtils.MEASURE_DENSITY_URL + "stationName=" + stationName + "&dataTerm=daily&pageNo=1&numOfRows=24" + PublicInstitutionUtils.SERVICE_KEY_AND_RETURN_TYPE + PublicInstitutionUtils.VERSION;
         String data = JsonUtils.datas(url);
 
         List<MeasureDensityDTO> measureDensities = new ArrayList<>();
