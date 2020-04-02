@@ -1,6 +1,7 @@
 import Observable from "Utils/Observable";
 import Http from "Utils/http";
 import mockData from "Utils/mockData";
+import { OBSERVER_TYPE_LIST } from "Utils/const";
 
 export default class DustModel extends Observable {
 	constructor() {
@@ -8,7 +9,7 @@ export default class DustModel extends Observable {
 	}
 
 	getGeoLocation() {
-		this.notify(mockData.dust);
+		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
 		// if (navigator.geolocation) {
 		// 	const options = {
 		// 		enableHighAccuracy: true,

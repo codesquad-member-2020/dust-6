@@ -1,4 +1,5 @@
 import { dust } from "./template";
+import { OBSERVER_TYPE_LIST } from "Utils/const";
 
 export default class DustView {
 	constructor(dustModel) {
@@ -6,10 +7,10 @@ export default class DustView {
 	}
 
 	subscribe() {
-		this.dustModel.addObserver(this.showLatestData);
+		this.dustModel.addObserver({ type: OBSERVER_TYPE_LIST.FETCH_DATA, observer: this.render });
 	}
 
-	showLatestData(data) {
+	render(data) {
 		const container = document.querySelector(".container");
 		const dustPage = dust`${data}`;
 		container.insertAdjacentHTML("afterbegin", dustPage);
