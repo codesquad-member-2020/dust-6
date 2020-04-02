@@ -1,14 +1,18 @@
 import Observable from "Utils/Observable";
 import Http from "Utils/http";
 import mockData from "Utils/mockData";
+import { OBSERVER_TYPE_LIST, SELECTORS } from "Utils/const";
+import { $getBySelector } from "Utils/utilFunction";
 
 export default class DustModel extends Observable {
 	constructor() {
 		super();
+		this.indexOfCurrentData = 0;
 	}
 
 	getGeoLocation() {
-		this.notify(mockData.dust);
+		this.displayedData = mockData.dust.data[0];
+		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
 		// if (navigator.geolocation) {
 		// 	const options = {
 		// 		enableHighAccuracy: true,
@@ -40,7 +44,12 @@ export default class DustModel extends Observable {
 	}
 
 	showNoGpsScreen() {
-		const noGpsScreen = document.querySelector(".no-gps");
+		const noGpsScreen = $getBySelector(document, SELECTORS.COMMON.VIEWPORT);
 		noGpsScreen.style.display = "flex";
+	}
+
+	updateDisplayedData(index) {
+		this.indexOfCurrentData = index;
+		this.notify({ type: OBSERVER_TYPE_LIST.SCROLL, data: index });
 	}
 }
