@@ -1,5 +1,5 @@
 import { dust } from "./template";
-import { OBSERVER_TYPE_LIST, GRADE_OPTIONS } from "Utils/const";
+import { OBSERVER_TYPE_LIST, GRADE_OPTIONS, SELECTORS } from "Utils/const";
 import { $listen, $getBySelector } from "Utils/utilFunction";
 
 export default class DustView {
@@ -23,14 +23,14 @@ export default class DustView {
 	}
 
 	render(data) {
-		const container = $getBySelector(document, ".container");
+		const container = $getBySelector(document, SELECTORS.COMMON.CONTAINER);
 		const dustPage = dust`${data}`;
 		container.insertAdjacentHTML("afterbegin", dustPage);
 	}
 
 	cacheDomElements() {
-		this.dustPanel = $getBySelector(document, ".dust__panel");
-		this.dustGraph = $getBySelector(document, ".dust__graph");
+		this.dustPanel = $getBySelector(document, SELECTORS.DUST.PANEL);
+		this.dustGraph = $getBySelector(document, SELECTORS.DUST.GRAPH);
 		this.dustGraphBars = [...this.dustGraph.children];
 	}
 
@@ -39,10 +39,10 @@ export default class DustView {
 		const { grade, value, time } = currentBar.dataset;
 		const [emoji, text, color] = GRADE_OPTIONS[grade];
 		this.dustPanel.style.background = `linear-gradient(${color}, #fff)`;
-		$getBySelector(this.dustPanel, ".grade__emoji").textContent = emoji;
-		$getBySelector(this.dustPanel, ".grade__text").textContent = text;
-		$getBySelector(this.dustPanel, ".details__value").textContent = value;
-		$getBySelector(this.dustPanel, ".details__time").textContent = time;
+		$getBySelector(this.dustPanel, SELECTORS.DUST.EMOJI).textContent = emoji;
+		$getBySelector(this.dustPanel, SELECTORS.DUST.TEXT).textContent = text;
+		$getBySelector(this.dustPanel, SELECTORS.DUST.DETAILS_VALUE).textContent = value;
+		$getBySelector(this.dustPanel, SELECTORS.DUST.DETAILS_TIME).textContent = time;
 	}
 
 	bindOnScrollListener(handler) {

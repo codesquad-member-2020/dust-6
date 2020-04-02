@@ -1,7 +1,7 @@
 import Observable from "Utils/Observable";
 import Http from "Utils/http";
 import mockData from "Utils/mockData";
-import { OBSERVER_TYPE_LIST } from "Utils/const";
+import { OBSERVER_TYPE_LIST, SELECTORS } from "Utils/const";
 import { $getBySelector } from "Utils/utilFunction";
 
 export default class DustModel extends Observable {
@@ -44,7 +44,7 @@ export default class DustModel extends Observable {
 	}
 
 	showNoGpsScreen() {
-		const noGpsScreen = $getBySelector(document, ".no-gps");
+		const noGpsScreen = $getBySelector(document, SELECTORS.COMMON.VIEWPORT);
 		noGpsScreen.style.display = "flex";
 	}
 
