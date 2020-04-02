@@ -20,10 +20,12 @@ class FineDustViewController: UIViewController {
     private var dataManager = DataManager()
     private var dustDensityDataSource = DustDensityDataSource()
     private var dustDensityTableViewDelegate = GraphTableViewDelegate()
+    private var locationManager = LocationManagerDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dustDensityTableViewDelegate.presentingController = self
+        locationManager.presentingController = self
         dustDensityTableView.delegate = dustDensityTableViewDelegate
         dustDensityTableView.dataSource = dustDensityDataSource
         addObservers()
@@ -38,6 +40,26 @@ protocol GraphPresenting {
 extension FineDustViewController: GraphPresenting {
     func loadData(with index: Int) {
         dataManager.reloadData(with: index)
+    }
+}
+
+protocol LocationPresenting {
+    func locationManagerDidFail(with errorMessage: String)
+}
+
+extension FineDustViewController: LocationPresenting {
+    func locationManagerDidFail(with errorMessage: String) {
+        let alert = UIAlertController(title: "위치정보 사용 불가능", message: errorMessage, preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "설정", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in })
+             }
+        }
+        let calcelAction = UIAlertAction(title: "닫기", style: .default)
+        alert.addAction(settingsAction)
+        alert.addAction(calcelAction)
+        present(alert, animated: false)
     }
 }
 
