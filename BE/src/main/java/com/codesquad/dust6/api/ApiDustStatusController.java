@@ -1,23 +1,46 @@
 package com.codesquad.dust6.api;
 
-import com.codesquad.dust6.domain.MeasureDensityDTO;
+import com.codesquad.dust6.domain.CoordinateDTO;
+import com.codesquad.dust6.domain.DistanceDTO;
 import com.codesquad.dust6.domain.ResponseDTO;
-import org.springframework.http.HttpStatus;
+import com.codesquad.dust6.service.LocationService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigInteger;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
 
+@RequestMapping("/api/dust-status")
 @RestController
 public class ApiDustStatusController {
 
-    @GetMapping("/api/dust-status/location")
-    public ResponseDTO getStatus(@RequestParam("latitude") float latitude, @RequestParam("longitude") float longitude) {
-        MeasureDensityDTO[] data = new MeasureDensityDTO[2];
-        data[0] = new MeasureDensityDTO("2016-04-20 14:00", 55, 2);
-        data[1] = new MeasureDensityDTO("2016-04-20 13:00", 61, 2);
-        return new ResponseDTO(200, HttpStatus.OK, "종로구", data);
+    //tm 좌표 기준 가장 가까운 측정소 목록
+    @GetMapping("/locations")
+    public Object locations() throws ParseException, JsonProcessingException, URISyntaxException {
+        return LocationService.test();
+    }
+
+    @GetMapping("/공공api/측정소목록")
+    public List<DistanceDTO> locationssd() {
+        return null;
+    }
+
+    //측정소 목록 중 가장 가까운 측정소 1개
+    @GetMapping("location")
+    private DistanceDTO location(CoordinateDTO coordinate) {
+//        locations(coordinate);
+        return null;
+    }
+
+    //측정소의 미세먼지 상태
+    @GetMapping("")
+    public ResponseDTO getStatus(CoordinateDTO coordinate) {
+        String stationName = location(coordinate).getStationName();
+        return null;
+//        return "redirect:/공공api/측정소_이름";
     }
 }
