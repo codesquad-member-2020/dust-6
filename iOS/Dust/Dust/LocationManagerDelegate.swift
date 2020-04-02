@@ -32,7 +32,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
         case .locationUnknown:
             presentingController?.locationManagerDidFail(with: "위치를 알 수 없습니다.")
         case .denied:
-            presentingController?.locationManagerDidFail(with: "위치정보 사용이 거부되었습니다. \n설정에서 위치정보를 활성화해주세요.")
+            presentingController?.locationManagerDidFail(with: "위치정보 사용이 거부되었습니다.\n설정에서 위치정보를 활성화해주세요.")
         default:
             presentingController?.locationManagerDidFail(with: "알 수 없는 오류로 위치정보를 가져오지 못했습니다.")
         }

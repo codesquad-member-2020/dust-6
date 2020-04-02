@@ -29,7 +29,6 @@ class FineDustViewController: UIViewController {
         dustDensityTableView.delegate = dustDensityTableViewDelegate
         dustDensityTableView.dataSource = dustDensityDataSource
         addObservers()
-        dataManager.loadData()
     }
 }
 
@@ -39,7 +38,7 @@ protocol GraphPresenting {
 
 extension FineDustViewController: GraphPresenting {
     func loadData(with index: Int) {
-        dataManager.reloadData(with: index)
+        dataManager.updateData(with: index)
     }
 }
 
@@ -61,9 +60,9 @@ extension FineDustViewController: LocationPresenting {
                 UIApplication.shared.open(settingsUrl, completionHandler: { (success) in })
              }
         }
-        let calcelAction = UIAlertAction(title: "닫기", style: .default)
+        let cancelAction = UIAlertAction(title: "닫기", style: .default)
         alert.addAction(settingsAction)
-        alert.addAction(calcelAction)
+        alert.addAction(cancelAction)
         present(alert, animated: false)
     }
 }
