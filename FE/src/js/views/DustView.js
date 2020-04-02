@@ -36,7 +36,12 @@ export default class DustView {
 	updateDustPanelView(index) {
 		const currentBar = this.dustGraphBars[index];
 		const { grade, value, time } = currentBar.dataset;
-		console.log(grade, value, time);
+		const [emoji, text, color] = GRADE_OPTIONS[grade];
+		this.dustPanel.style.background = `linear-gradient(${color}, #fff)`;
+		this.dustPanel.querySelector(".grade__emoji").textContent = emoji;
+		this.dustPanel.querySelector(".grade__text").textContent = text;
+		this.dustPanel.querySelector(".details__value").textContent = value;
+		this.dustPanel.querySelector(".details__time").textContent = time;
 	}
 
 	bindOnScrollListener(handler) {
