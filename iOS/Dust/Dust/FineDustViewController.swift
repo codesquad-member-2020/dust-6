@@ -44,11 +44,23 @@ extension FineDustViewController: GraphPresenting {
 }
 
 protocol LocationPresenting {
-    
+    func locationManagerDidFail(with errorMessage: String)
 }
 
 extension FineDustViewController: LocationPresenting {
-    
+    func locationManagerDidFail(with errorMessage: String) {
+        let alert = UIAlertController(title: "위치정보 사용 불가능", message: errorMessage, preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "설정", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in })
+             }
+        }
+        let calcelAction = UIAlertAction(title: "닫기", style: .default)
+        alert.addAction(settingsAction)
+        alert.addAction(calcelAction)
+        present(alert, animated: false)
+    }
 }
 
 extension FineDustViewController {
