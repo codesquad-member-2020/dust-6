@@ -1,5 +1,5 @@
 import { dust } from "./template";
-import { OBSERVER_TYPE_LIST } from "Utils/const";
+import { OBSERVER_TYPE_LIST, GRADE_OPTIONS } from "Utils/const";
 
 export default class DustView {
 	constructor(dustModel) {
