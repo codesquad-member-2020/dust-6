@@ -14,6 +14,9 @@ class NetworkManager {
     static var dustStatusUrl: String {
         return serverUrl + "api/dust-status/location?"
     }
+    static var forecastUrl: String {
+        return serverUrl + "api/dust/forecast"
+    }
     
     static func getRequest(url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         var request = URLRequest(url: url)
