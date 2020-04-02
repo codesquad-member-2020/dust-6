@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RequestMapping("/api/dust-status")
@@ -16,8 +18,8 @@ public class ApiDustStatusController {
 
     //tm 좌표 기준 가장 가까운 측정소 목록
     @GetMapping("/locations")
-    public Object locations(CoordinateDTO coordinate) {
-        return LocationService.locations(coordinate);
+    public Object locations() throws URISyntaxException, IOException {
+        return LocationService.locations();
     }
 
     @GetMapping("/공공api/측정소목록")
