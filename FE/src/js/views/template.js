@@ -10,9 +10,9 @@ function dustPanel(stationName, { dataTime, pm10Value, pm10Grade }) {
 	const title = `<h1>미세먼지 앱</h1>`;
 	const gradeEmoji = `<div class="grade__emoji">${GRADE_OPTIONS[pm10Grade][0]}</div>`;
 	const gradeText = `<div class="grade__text">${GRADE_OPTIONS[pm10Grade][1]}</div>`;
-	const values = `<div class="dust__value"><span>
-			<span>${pm10Value}</span> 𝜇g/m³
-    </span><span>${dataTime}</span></div>`;
+	const values = `<div class="dust__details"><span>
+			<span class="details__value">${pm10Value}</span> 𝜇g/m³
+    </span><span class="details__time">${dataTime}</span></div>`;
 	const stationNameBox = `<div class="dust__station">
 		<span class="station__name">${stationName}</span> 측정소 기준
 	</div>`;
