@@ -121,6 +121,18 @@ export default class ForecastView {
 		this.forecastImages.forEach((image, index) =>
 			index === currentImgIndex ? (image.style.opacity = 1) : (image.style.opacity = 0)
 		);
+
+		this.handleButton();
+	}
+
+	handleButton() {
+		if (Number(this.progressBar.style.width.slice(0, -2)) < 10) {
+			this.button.textContent = "▶️";
+			this.playing = false;
+		} else {
+			this.button.textContent = "⏸️";
+			this.playing = true;
+		}
 	}
 
 	bindOnClickListener() {
