@@ -14,6 +14,6 @@ export default class ForecastView {
 	render(data) {
 		const container = $getBySelector(document, SELECTORS.COMMON.CONTAINER);
 		const forecastPage = forecast`${data}`;
-		// container.insertAdjacentHTML("beforeend", forecastPage);
+		container.insertAdjacentHTML("beforeend", forecastPage);
 	}
 }
