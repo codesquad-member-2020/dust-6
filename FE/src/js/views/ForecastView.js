@@ -10,6 +10,8 @@ export default class ForecastView {
 		this.button = null;
 		this.progressBar = null;
 		this.playing = false;
+		this.currentImgIndex = 0;
+		this.timer = null;
 	}
 
 	subscribe() {
@@ -44,13 +46,33 @@ export default class ForecastView {
 
 	buttonTouchHandler() {
 		if (this.playing) return;
-		// 버튼 이미지 변경
 		this.button.textContent = "⏸️";
-		// 이미지 전환 시작
-		// 진행바 width 변경
+		this.playing = true;
+		this.play();
+	}
+
+	handleProgress() {
+		const fullWidth = this.progressBar.previousElementSibling.offsetWidth;
+		const progressWidth = Number(this.progressBar.style.width.slice(0, -2));
+		if (progressWidth >= fullWidth) {
+			this.stop();
+			return;
+		}
+		const widthPerFrame = fullWidth / this.forecastImages.length;
+		this.progressBar.style.width = progressWidth + widthPerFrame + "px";
+	}
+
+	play() {
+		this.timer = setInterval(this.handleProgress.bind(this), 300);
+	}
+	stop() {
+		clearInterval(this.timer);
+		this.button.textContent = "▶️";
+		this.playing = false;
+		this.progressBar.style.width = "0px";
 	}
 
 	bindOnClickListener() {
-		$listen(this.button, "touchstart", () => this.buttonTouchHandler());
+		$listen(this.button, "touchend", () => this.buttonTouchHandler());
 	}
 }
