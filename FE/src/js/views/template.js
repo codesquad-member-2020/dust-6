@@ -44,7 +44,7 @@ function forecastPanel({ imageUrls, informOverall, informGrade }) {
 		imgs += `<img src="${url}" alt="forecast image ${index + 1}" width="100%"/>`;
 		return imgs;
 	}, "");
-	const imageContainer = `<div class="forecast__image">${images}</div>`;
+	const imageContainer = `<div class="forecast__images">${images}</div>`;
 
 	const controls = `<div class="forecast__controls"><span class="button">▶️</span><progress class="controller" value="0" max="9"></progress></div>`;
 	const overall = `<div class="forecast__overall">${informOverall}</div>`;

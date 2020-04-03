@@ -52,7 +52,7 @@ export const SELECTORS = {
 	},
 	FORECAST: {
 		PANEL: ".forecast__panel",
-		IMAGE: ".forecast__image",
+		IMAGES: ".forecast__images",
 		CONTROLS: ".forecast__controls",
 		BUTTON: ".button",
 		CONTROLLER: ".controller",
