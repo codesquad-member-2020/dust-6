@@ -40,15 +40,13 @@ class DataManager {
     
     func setDustStatusData(latitude: String, longitude: String) {
         let decoder = JSONDecoder()
-        let urlString = "\(NetworkManager.dustStatusUrl)latitude=\(latitude)&longitude=\(longitude)"
+        let urlString = "\(NetworkManager.dustStatusUrl)longitude=\(longitude)&latitude=\(latitude)"
         guard let url = URL(string: urlString) else { return }
         NetworkManager.getRequest(url: url) { (data, _, _) in
             guard let data = data else { return }
             do {
                 self.dustData = try decoder.decode(DustStatus.self, from: data)
-                DispatchQueue.main.async {
-                    self.loadData()
-                }
+                self.loadData()
             } catch {
                 
             }

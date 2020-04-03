@@ -130,24 +130,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forecast" translatesAutoresizingMaskIntoConstraints="NO" id="Jbm-tE-QIU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jbm-tE-QIU">
                                 <rect key="frame" x="0.0" y="104" width="414" height="401"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="8R0-Br-E2X"/>
+                                    <constraint firstAttribute="height" constant="401" id="lNG-0a-YIc"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○ [미세먼지] 수도권·충청권·광주·전북은 ‘나쁨’, 그 밖의 권역은 ‘보통’으로 예상됨. 다만, 강원영서·대구는 오전에 ‘나쁨’ 수준일 것으로 예상됨." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-Gz-fU7">
-                                <rect key="frame" x="15" y="509" width="384" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○ 예보 정보를 받아오는 중입니다. 잠시만 기다려주세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-Gz-fU7">
+                                <rect key="frame" x="15" y="509" width="384" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-y0-ovy">
-                                <rect key="frame" x="15" y="553" width="384" height="36"/>
-                                <string key="text">서울 : 보통,제주 : 좋음,전남 : 좋음,전북 : 보통,광주 : 좋음,경남 : 좋음,경북 : 보통,울산 : 좋음,대구 : 보통,부산 : 좋음,충남 : 보통,충북 : 보통,세종 : 보통,대전 : 보통,영동 : 좋음,영서 : 보통,경기남부 : 보통,경기북부 : 보통,인천 : 보통</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-y0-ovy">
+                                <rect key="frame" x="15" y="538.5" width="384" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-yO-Chd">
-                                <rect key="frame" x="15" y="616" width="384" height="44"/>
+                                <rect key="frame" x="15" y="565.5" width="384" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PZ-ec-Qbs" customClass="PlayButton" customModule="Dust" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -159,7 +162,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-o6-xWh">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-o6-xWh">
                                         <rect key="frame" x="82" y="0.0" width="304" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="8uL-J4-m8u"/>
@@ -188,6 +191,11 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="예보" image="clock.fill" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="forecastGrade" destination="5QY-y0-ovy" id="Wwl-Rn-ZJg"/>
+                        <outlet property="forecastImage" destination="Jbm-tE-QIU" id="Ta9-oj-nEw"/>
+                        <outlet property="forecastOverall" destination="i2v-Gz-fU7" id="IHQ-6g-I2e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,7 +222,6 @@
     </scenes>
     <resources>
         <image name="clock.fill" width="17" height="17"/>
-        <image name="forecast" width="344.5" height="401"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="smoke.fill" width="19" height="14"/>
     </resources>

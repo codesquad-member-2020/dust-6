@@ -75,8 +75,10 @@ extension FineDustViewController {
     
     @objc private func updateStaion(_ notification: NSNotification) {
         guard let station = notification.userInfo?[DataManager.station] as? String else { return }
-        stationLabel.setStation(station)
-        dustDensityTableView.reloadData()
+        DispatchQueue.main.async {
+            self.stationLabel.setStation(station)
+            self.dustDensityTableView.reloadData()
+        }
     }
     
     @objc private func updateStatusView(_ notification: NSNotification) {
@@ -84,10 +86,12 @@ extension FineDustViewController {
             let grade = notification.userInfo?[DataManager.grade] as? Int,
             let value = notification.userInfo?[DataManager.value] as? Int
             else { return }
-        timeLabel.setTime(time: time)
-        statusView.setStatusView(with: grade)
-        statusEmoji.setEmoji(with: grade)
-        statusLabel.setStatusLabel(with: grade)
-        densityLabel.setDensity(with: value)
+        DispatchQueue.main.async {
+            self.timeLabel.setTime(time: time)
+            self.statusView.setStatusView(with: grade)
+            self.statusEmoji.setEmoji(with: grade)
+            self.statusLabel.setStatusLabel(with: grade)
+            self.densityLabel.setDensity(with: value)
+        }
     }
 }
