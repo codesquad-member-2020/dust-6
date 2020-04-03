@@ -1,11 +1,11 @@
 export const API = {
 	DEV: {
-		CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?longitude=",
+		CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?",
 		FORECAST: "https://codesquad-dust6.herokuapp.com/api/dust/forecast"
 	},
 	PROD: {
-		CURRENT_24HOURS: "http://34.236.160.204:80/api/dust-status/location?longitude=",
-		FORECAST: "http://34.236.160.204:80/api/dust/forecast"
+		CURRENT_24HOURS: "http://34.236.160.204:8080/api/dust-status/location?",
+		FORECAST: "http://34.236.160.204:8080/api/dust/forecast"
 	}
 };
 

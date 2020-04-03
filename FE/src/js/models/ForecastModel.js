@@ -10,12 +10,10 @@ export default class ForecastModel extends Observable {
 
 	fetchData() {
 		const url = API.PROD.FORECAST;
-		try {
-			const response = this.http.get(url);
-			this.handleResponse(response);
-		} catch (error) {
-			this.handleError(error);
-		}
+		this.http
+			.get(url)
+			.then(this.handleResponse.bind(this))
+			.catch(this.handleError);
 	}
 
 	handleResponse(response) {

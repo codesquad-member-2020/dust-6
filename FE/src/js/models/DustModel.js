@@ -41,18 +41,16 @@ export default class DustModel extends Observable {
 	}
 
 	fetchData(longitude, latitude) {
-		const url = `${API.PROD.CURRENT_24HOURS}${longitude}&latitude=${latitude}`;
-		try {
-			const response = this.http.get(url);
-			this.handleResponse(response);
-		} catch (error) {
-			this.handleError(error);
-		}
+		const url = `${API.PROD.CURRENT_24HOURS}longitude=${longitude}&latitude=${latitude}`;
+		this.http
+			.get(url)
+			.then(this.handleResponse.bind(this))
+			.catch(this.handleError);
 	}
 
 	handleResponse(response) {
 		if (response.code === 200) {
-			this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response.data });
+			this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response });
 			this.hideLoadingScreen();
 		} else {
 			throw Error(`네트워크 에러 --- ${response.code}`);
