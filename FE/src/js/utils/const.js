@@ -33,7 +33,8 @@ export const SELECTORS = {
 	COMMON: {
 		CONTAINER: ".container",
 		VIEWPORT: ".big-screen",
-		NO_GPS: ".no-gps"
+		NO_GPS: ".no-gps",
+		LOADING: ".loading"
 	},
 	DUST: {
 		PANEL: ".dust__panel",
