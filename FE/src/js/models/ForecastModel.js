@@ -1,5 +1,6 @@
 import Observable from "Utils/Observable";
 import mockData from "Utils/mockData";
+import { OBSERVER_TYPE_LIST } from "Utils/const";
 
 export default class ForecastModel extends Observable {
 	constructor() {
@@ -7,6 +8,6 @@ export default class ForecastModel extends Observable {
 	}
 
 	fetchData() {
-		this.notify(mockData.forecast);
+		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.forecast.data });
 	}
 }

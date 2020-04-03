@@ -31,3 +31,23 @@ function graph(data) {
 	}, "");
 	return `<div class="dust__graph">${graphs}</div>`;
 }
+
+export function forecast(_, data) {
+	const panel = forecastPanel(data);
+	return `<div class="page forecast">${panel}</div>`;
+}
+
+function forecastPanel({ imageUrls, informOverall, informGrade }) {
+	const title = `<h1>미세먼지 예보</h1>`;
+
+	const images = imageUrls.reduce((imgs, url, index) => {
+		imgs += `<img src="${url}" alt="forecast image ${index + 1}" width="100%"/>`;
+		return imgs;
+	}, "");
+	const imageContainer = `<div class="forecast__image">${images}</div>`;
+
+	const controls = `<div class="forecast__controls"><span class="button">▶️</span><progress class="controller" value="0" max="9"></progress></div>`;
+	const overall = `<div class="forecast__overall">${informOverall}</div>`;
+	const grade = `<div class="forecast__grade">${informGrade}</div>`;
+	return `<div class="forecast__panel">${title}${imageContainer}${controls}${overall}${grade}</div>`;
+}
