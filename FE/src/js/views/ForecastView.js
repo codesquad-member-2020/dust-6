@@ -101,9 +101,17 @@ export default class ForecastView {
 	}
 
 	move(e) {
+		const fullWidth = this.background.offsetWidth;
 		const gap = e.touches[0].clientX - this.startPoint;
 		if (gap < 0 || gap > this.background.offsetWidth) return;
 		this.progressBar.style.width = gap + "px";
+
+		const progressWidth = Number(this.progressBar.style.width.slice(0, -2));
+		const widthPerFrame = fullWidth / this.forecastImages.length;
+		const currentImgIndex = Math.floor(progressWidth / widthPerFrame);
+		this.forecastImages.forEach((image, index) =>
+			index === currentImgIndex ? (image.style.opacity = 1) : (image.style.opacity = 0)
+		);
 	}
 
 	bindOnClickListener() {
