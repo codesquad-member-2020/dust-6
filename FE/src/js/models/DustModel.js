@@ -1,6 +1,7 @@
 import Observable from "Utils/Observable";
 import Http from "Utils/http";
 import mockData from "Utils/mockData";
+import { $getBySelector } from "Utils/utilFunction";
 import {
 	API,
 	GEOLOCATION_OPTIONS,
@@ -8,7 +9,6 @@ import {
 	OBSERVER_TYPE_LIST,
 	SELECTORS
 } from "Utils/const";
-import { $getBySelector } from "Utils/utilFunction";
 
 export default class DustModel extends Observable {
 	constructor() {
@@ -18,14 +18,11 @@ export default class DustModel extends Observable {
 	}
 
 	getGeoLocation() {
-		const that = this;
-		return new Promise(function() {
-			navigator.geolocation.getCurrentPosition(
-				that.geoSuccess.bind(that),
-				that.geoError.bind(that),
-				GEOLOCATION_OPTIONS
-			);
-		});
+		navigator.geolocation.getCurrentPosition(
+			this.geoSuccess.bind(this),
+			this.geoError.bind(this),
+			GEOLOCATION_OPTIONS
+		);
 	}
 
 	geoSuccess(position) {
@@ -34,17 +31,13 @@ export default class DustModel extends Observable {
 			longitude = DEFAULT_LOCATION.LONGITUDE;
 			latitude = DEFAULT_LOCATION.LATITUDE;
 		}
-		this.displayedData = mockData.dust.data[0];
-		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
-		this.hideLoadingScreen();
-		// this.fetchData(longitude, latitude);
+		this.fetchData(longitude, latitude);
 	}
 
 	geoError(error) {
 		if (error.code == error.PERMISSION_DENIED) {
 			this.hideLoadingScreen();
 			this.showNoGpsScreen();
-			return Promise.reject("현재 위치를 알 수 없습니다.");
 		}
 	}
 
@@ -59,13 +52,14 @@ export default class DustModel extends Observable {
 	}
 
 	handleResponse(response) {
-		if (response.code === 200) {
-			this.displayedData = response.data[0];
-			this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response.data });
-			this.hideLoadingScreen();
-		} else {
-			throw Error(`네트워크 에러 --- ${response.code}`);
-		}
+		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
+		this.hideLoadingScreen();
+		// if (response.code === 200) {
+		// 	this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response.data });
+		//   this.hideLoadingScreen();
+		// } else {
+		// 	throw Error(`네트워크 에러 --- ${response.code}`);
+		// }
 	}
 
 	handleError(error) {

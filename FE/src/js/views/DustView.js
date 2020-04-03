@@ -1,5 +1,5 @@
 import { dust } from "./template";
-import { OBSERVER_TYPE_LIST, GRADE_OPTIONS, SELECTORS } from "Utils/const";
+import { OBSERVER_TYPE_LIST, GRADE_OPTIONS, SELECTORS, HEIGHT_OF_BAR } from "Utils/const";
 import { $listen, $getBySelector } from "Utils/utilFunction";
 
 export default class DustView {
@@ -8,6 +8,7 @@ export default class DustView {
 		this.dustPanel = null;
 		this.dustGraph = null;
 		this.dustGraphBars = null;
+		this.previousIndexOfBar = 0;
 	}
 
 	subscribe() {
@@ -15,6 +16,10 @@ export default class DustView {
 		this.dustModel.addObserver({
 			type: OBSERVER_TYPE_LIST.FETCH_DATA,
 			observer: this.cacheDomElements.bind(this)
+		});
+		this.dustModel.addObserver({
+			type: OBSERVER_TYPE_LIST.FETCH_DATA,
+			observer: this.bindOnScrollListener.bind(this)
 		});
 		this.dustModel.addObserver({
 			type: OBSERVER_TYPE_LIST.SCROLL,
@@ -45,7 +50,15 @@ export default class DustView {
 		$getBySelector(this.dustPanel, SELECTORS.DUST.DETAILS_TIME).textContent = time;
 	}
 
-	bindOnScrollListener(handler) {
-		$listen(this.dustGraph, "scroll", e => handler(e.target.scrollTop));
+	barGraphScrollHandler(scrollTopValue) {
+		const currentIndexOfBar = Math.floor(scrollTopValue / HEIGHT_OF_BAR);
+		if (currentIndexOfBar !== this.previousIndexOfBar) {
+			this.dustModel.updateDisplayedData(currentIndexOfBar);
+			this.previousIndexOfBar = currentIndexOfBar;
+		}
+	}
+
+	bindOnScrollListener() {
+		$listen(this.dustGraph, "scroll", e => this.barGraphScrollHandler(e.target.scrollTop));
 	}
 }
