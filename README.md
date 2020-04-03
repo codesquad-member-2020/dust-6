@@ -1,15 +1,18 @@
 # Dust-6
-¹Ì¼¼¸ÕÁö ÇÁ·ÎÁ§Æ® - 6ÆÀ
+ë¯¸ì„¸ë¨¼ì§€ í”„ë¡œì íŠ¸ - 6íŒ€
 * FE: [Reese](https://github.com/reesekimm)
 * BE: [Poogle](https://github.com/suhyunsim), [Ever](https://github.com/hsik0225)
-* iOS: [¶ÇÄ¡](https://github.com/TTozzi)
+* iOS: [ë˜ì¹˜](https://github.com/TTozzi)
 
-## ¹èÆ÷
+## ë°°í¬
 http://3.34.23.92:80/
+
+## iOS demo
+[ë°ëª¨ ì˜ìƒ](https://github.com/codesquad-member-2020/dust-6/blob/dev/iOS/dustDemo.gif)
 
 ## Ground Rule
 [Dust-6 Ground Rule](https://github.com/codesquad-member-2020/dust-6/wiki/Ground-Rule)
 
 ## WEB API
 
-[Dust-6 API ¹®¼­](https://github.com/codesquad-member-2020/dust-6/wiki/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-6%ED%8C%80-API-%EB%AC%B8%EC%84%9C)
+[Dust-6 API ë¬¸ì„œ](https://github.com/codesquad-member-2020/dust-6/wiki/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-6%ED%8C%80-API-%EB%AC%B8%EC%84%9C)
