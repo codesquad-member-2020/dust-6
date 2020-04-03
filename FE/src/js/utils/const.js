@@ -1,6 +1,12 @@
 export const API = {
-	CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?longitude=",
-	FORECAST: "https://codesquad-dust6.herokuapp.com/api/dust/forecast"
+	DEV: {
+		CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?longitude=",
+		FORECAST: "https://codesquad-dust6.herokuapp.com/api/dust/forecast"
+	},
+	PROD: {
+		CURRENT_24HOURS: "http://34.236.160.204:80/api/dust-status/location?longitude=",
+		FORECAST: "http://34.236.160.204:80/api/dust/forecast"
+	}
 };
 
 export const GEOLOCATION_OPTIONS = {
@@ -44,5 +50,13 @@ export const SELECTORS = {
 		DETAILS_VALUE: ".details__value",
 		DETAILS_TIME: ".details__time"
 	},
-	FORECAST: {}
+	FORECAST: {
+		PANEL: ".forecast__panel",
+		IMAGE: ".forecast__image",
+		CONTROLS: ".forecast__controls",
+		BUTTON: ".button",
+		CONTROLLER: ".controller",
+		OVERALL: ".forecast__overall",
+		GRADE: ".forecast__grade"
+	}
 };
