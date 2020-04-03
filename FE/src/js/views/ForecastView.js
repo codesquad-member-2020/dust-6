@@ -62,9 +62,29 @@ export default class ForecastView {
 		this.progressBar.style.width = progressWidth + widthPerFrame + "px";
 	}
 
-	play() {
-		this.timer = setInterval(this.handleProgress.bind(this), 300);
+	handleImage() {
+		const { forecastImages, currentImgIndex } = this;
+		if (currentImgIndex === forecastImages.length) {
+			this.forecastImages.forEach((image, index) =>
+				index === 0 ? (image.style.opacity = 1) : (image.style.opacity = 0)
+			);
+			this.currentImgIndex = 0;
+			return;
+		}
+		this.forecastImages.forEach((image, index) =>
+			index === currentImgIndex ? (image.style.opacity = 1) : (image.style.opacity = 0)
+		);
+		this.currentImgIndex += 1;
 	}
+
+	play() {
+		const that = this;
+		this.timer = setInterval(function() {
+			that.handleProgress.call(that);
+			that.handleImage.call(that);
+		}, 300);
+	}
+
 	stop() {
 		clearInterval(this.timer);
 		this.button.textContent = "▶️";
