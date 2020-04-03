@@ -1,6 +1,5 @@
 import Observable from "Utils/Observable";
 import Http from "Utils/http";
-import mockData from "Utils/mockData";
 import { $getBySelector } from "Utils/utilFunction";
 import {
 	API,
@@ -42,7 +41,7 @@ export default class DustModel extends Observable {
 	}
 
 	fetchData(longitude, latitude) {
-		const url = `${API.CURRENT_24HOURS}${longitude}&latitude=${latitude}`;
+		const url = `${API.PROD.CURRENT_24HOURS}${longitude}&latitude=${latitude}`;
 		try {
 			const response = this.http.get(url);
 			this.handleResponse(response);
@@ -52,14 +51,12 @@ export default class DustModel extends Observable {
 	}
 
 	handleResponse(response) {
-		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
-		this.hideLoadingScreen();
-		// if (response.code === 200) {
-		// 	this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response.data });
-		//   this.hideLoadingScreen();
-		// } else {
-		// 	throw Error(`네트워크 에러 --- ${response.code}`);
-		// }
+		if (response.code === 200) {
+			this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response.data });
+			this.hideLoadingScreen();
+		} else {
+			throw Error(`네트워크 에러 --- ${response.code}`);
+		}
 	}
 
 	handleError(error) {
