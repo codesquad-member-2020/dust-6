@@ -26,6 +26,10 @@ export default class ForecastView {
 		});
 		this.forecastModel.addObserver({
 			type: OBSERVER_TYPE_LIST.FETCH_DATA,
+			observer: this.handleOpacity.bind(this)
+		});
+		this.forecastModel.addObserver({
+			type: OBSERVER_TYPE_LIST.FETCH_DATA,
 			observer: this.bindOnClickListener.bind(this)
 		});
 	}
@@ -44,6 +48,11 @@ export default class ForecastView {
 		this.button = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.BUTTON);
 		this.background = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.BACKGROUND);
 		this.progressBar = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.CONTROLLER);
+	}
+
+	handleOpacity() {
+		this.forecastImages.forEach(image => (image.style.opacity = 0));
+		this.forecastImages[0].style.opacity = 1;
 	}
 
 	buttonTouchHandler() {
