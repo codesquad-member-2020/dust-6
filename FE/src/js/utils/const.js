@@ -1,3 +1,19 @@
+export const API = {
+	CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?longitude="
+};
+
+export const GEOLOCATION_OPTIONS = {
+	enableHighAccuracy: true,
+	maximumAge: 0,
+	timeout: Infinity
+};
+
+export const DEFAULT_LOCATION = {
+	NAME: "CodeSquad",
+	LONGITUDE: 127.033419,
+	LATITUDE: 37.490846
+};
+
 export const OBSERVER_TYPE_LIST = {
 	FETCH_DATA: "fetchData",
 	SCROLL: "scrollBarGraph"
