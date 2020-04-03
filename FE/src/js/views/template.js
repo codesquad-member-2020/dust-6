@@ -29,7 +29,7 @@ function graph(data) {
 	</div>`;
 		return bars;
 	}, "");
-	return `<div class="dust__graph">${graphs}</div>`;
+	return `<div class="dust__graph">${graphs}<div class="message">🧙‍♂️<br />최근 24시간 동안 기록된 데이터가 제공됩니다.</div></div>`;
 }
 
 export function forecast(_, data) {
