@@ -55,6 +55,7 @@ export const SELECTORS = {
 		IMAGES: ".forecast__images",
 		CONTROLS: ".forecast__controls",
 		BUTTON: ".button",
+		BACKGROUND: ".background",
 		CONTROLLER: ".progress",
 		OVERALL: ".forecast__overall",
 		GRADE: ".forecast__grade"

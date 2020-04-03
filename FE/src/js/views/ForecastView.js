@@ -12,6 +12,7 @@ export default class ForecastView {
 		this.playing = false;
 		this.currentImgIndex = 0;
 		this.timer = null;
+		this.startPoint = null;
 	}
 
 	subscribe() {
@@ -41,6 +42,7 @@ export default class ForecastView {
 			...$getBySelector(this.forecastPanel, SELECTORS.FORECAST.IMAGES).children
 		];
 		this.button = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.BUTTON);
+		this.background = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.BACKGROUND);
 		this.progressBar = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.CONTROLLER);
 	}
 
@@ -52,7 +54,7 @@ export default class ForecastView {
 	}
 
 	handleProgress() {
-		const fullWidth = this.progressBar.previousElementSibling.offsetWidth;
+		const fullWidth = this.background.offsetWidth;
 		const progressWidth = Number(this.progressBar.style.width.slice(0, -2));
 		if (progressWidth >= fullWidth) {
 			this.stop();
@@ -78,6 +80,7 @@ export default class ForecastView {
 	}
 
 	play() {
+		this.progressBar.style.transition = "width 0.3s ease";
 		const that = this;
 		this.timer = setInterval(function() {
 			that.handleProgress.call(that);
@@ -92,7 +95,20 @@ export default class ForecastView {
 		this.progressBar.style.width = "0px";
 	}
 
+	start(e) {
+		this.startPoint = this.background.getBoundingClientRect().x;
+		this.progressBar.style.transition = "none";
+	}
+
+	move(e) {
+		const gap = e.touches[0].clientX - this.startPoint;
+		if (gap < 0 || gap > this.background.offsetWidth) return;
+		this.progressBar.style.width = gap + "px";
+	}
+
 	bindOnClickListener() {
-		$listen(this.button, "touchend", () => this.buttonTouchHandler());
+		$listen(this.button, "touchend", () => this.buttonTouchHandler(), false);
+		$listen(this.progressBar, "touchstart", e => this.start(e), false);
+		$listen(this.progressBar, "touchmove", e => this.move(e), false);
 	}
 }
