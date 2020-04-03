@@ -16,32 +16,32 @@ export default class DustModel extends Observable {
 		this.indexOfCurrentData = 0;
 	}
 
-	getGeoLocation() {
-		navigator.geolocation.getCurrentPosition(
-			this.geoSuccess.bind(this),
-			this.geoError.bind(this),
-			GEOLOCATION_OPTIONS
-		);
-	}
+	// getGeoLocation() {
+	// 	navigator.geolocation.getCurrentPosition(
+	// 		this.geoSuccess.bind(this),
+	// 		this.geoError.bind(this),
+	// 		GEOLOCATION_OPTIONS
+	// 	);
+	// }
 
-	geoSuccess(position) {
-		let { longitude, latitude } = position.coords;
-		if (!longitude || !latitude) {
-			longitude = DEFAULT_LOCATION.LONGITUDE;
-			latitude = DEFAULT_LOCATION.LATITUDE;
-		}
-		this.fetchData(longitude, latitude);
-	}
+	// geoSuccess(position) {
+	// 	let { longitude, latitude } = position.coords;
+	// 	if (!longitude || !latitude) {
+	// 		longitude = DEFAULT_LOCATION.LONGITUDE;
+	// 		latitude = DEFAULT_LOCATION.LATITUDE;
+	// 	}
+	// 	this.fetchData(longitude, latitude);
+	// }
 
-	geoError(error) {
-		if (error.code == error.PERMISSION_DENIED) {
-			this.hideLoadingScreen();
-			this.showNoGpsScreen();
-		}
-	}
+	// geoError(error) {
+	// 	if (error.code == error.PERMISSION_DENIED) {
+	// 		this.hideLoadingScreen();
+	// 		this.showNoGpsScreen();
+	// 	}
+	// }
 
 	fetchData(longitude, latitude) {
-		const url = `${API.PROD.CURRENT_24HOURS}longitude=${longitude}&latitude=${latitude}`;
+		const url = `${API.PROD.CURRENT_24HOURS}longitude=${DEFAULT_LOCATION.LONGITUDE}&latitude=${DEFAULT_LOCATION.LATITUDE}`;
 		this.http
 			.get(url)
 			.then(this.handleResponse.bind(this))
