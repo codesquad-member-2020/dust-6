@@ -44,9 +44,11 @@ function forecastPanel({ imageUrls, informOverall, informGrade }) {
 		imgs += `<img src="${url}" alt="forecast image ${index + 1}" width="100%"/>`;
 		return imgs;
 	}, "");
-	const imageContainer = `<div class="forecast__image">${images}</div>`;
+	const imageContainer = `<div class="forecast__images">${images}</div>`;
 
-	const controls = `<div class="forecast__controls"><span class="button">▶️</span><progress class="controller" value="0" max="9"></progress></div>`;
+	const button = `<span class="button">▶️</span>`;
+	const controller = `<div class="controller__container"><div class="background"></div><div class="progress"></div></div>`;
+	const controls = `<div class="forecast__controls">${button}${controller}</div>`;
 	const overall = `<div class="forecast__overall">${informOverall}</div>`;
 	const grade = `<div class="forecast__grade">${informGrade}</div>`;
 	return `<div class="forecast__panel">${title}${imageContainer}${controls}${overall}${grade}</div>`;
