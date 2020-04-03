@@ -13,10 +13,17 @@ export default class ForecastView {
 	}
 
 	subscribe() {
-		this.forecastModel.addObserver({ type: OBSERVER_TYPE_LIST.FETCH_DATA, observer: this.render });
+		this.forecastModel.addObserver({
+			type: OBSERVER_TYPE_LIST.FETCH_DATA,
+			observer: this.render
+		});
 		this.forecastModel.addObserver({
 			type: OBSERVER_TYPE_LIST.FETCH_DATA,
 			observer: this.cacheDomElements.bind(this)
+		});
+		this.forecastModel.addObserver({
+			type: OBSERVER_TYPE_LIST.FETCH_DATA,
+			observer: this.bindOnClickListener.bind(this)
 		});
 	}
 
@@ -33,5 +40,17 @@ export default class ForecastView {
 		];
 		this.button = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.BUTTON);
 		this.progressBar = $getBySelector(this.forecastPanel, SELECTORS.FORECAST.CONTROLLER);
+	}
+
+	buttonTouchHandler() {
+		if (this.playing) return;
+		// 버튼 이미지 변경
+		this.button.textContent = "⏸️";
+		// 이미지 전환 시작
+		// 진행바 width 변경
+	}
+
+	bindOnClickListener() {
+		$listen(this.button, "touchstart", () => this.buttonTouchHandler());
 	}
 }
