@@ -1,5 +1,6 @@
 export const API = {
-	CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?longitude="
+	CURRENT_24HOURS: "https://codesquad-dust6.herokuapp.com/api/dust-status/location?longitude=",
+	FORECAST: "https://codesquad-dust6.herokuapp.com/api/dust/forecast"
 };
 
 export const GEOLOCATION_OPTIONS = {
@@ -32,7 +33,8 @@ export const SELECTORS = {
 	COMMON: {
 		CONTAINER: ".container",
 		VIEWPORT: ".big-screen",
-		NO_GPS: ".no-gps"
+		NO_GPS: ".no-gps",
+		LOADING: ".loading"
 	},
 	DUST: {
 		PANEL: ".dust__panel",

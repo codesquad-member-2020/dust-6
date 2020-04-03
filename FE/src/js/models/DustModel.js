@@ -36,11 +36,13 @@ export default class DustModel extends Observable {
 		}
 		this.displayedData = mockData.dust.data[0];
 		this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: mockData.dust });
+		this.hideLoadingScreen();
 		// this.fetchData(longitude, latitude);
 	}
 
 	geoError(error) {
 		if (error.code == error.PERMISSION_DENIED) {
+			this.hideLoadingScreen();
 			this.showNoGpsScreen();
 			return Promise.reject("현재 위치를 알 수 없습니다.");
 		}
@@ -60,6 +62,7 @@ export default class DustModel extends Observable {
 		if (response.code === 200) {
 			this.displayedData = response.data[0];
 			this.notify({ type: OBSERVER_TYPE_LIST.FETCH_DATA, data: response.data });
+			this.hideLoadingScreen();
 		} else {
 			throw Error(`네트워크 에러 --- ${response.code}`);
 		}
@@ -72,6 +75,11 @@ export default class DustModel extends Observable {
 	showNoGpsScreen() {
 		const noGpsScreen = $getBySelector(document, SELECTORS.COMMON.NO_GPS);
 		noGpsScreen.style.display = "flex";
+	}
+
+	hideLoadingScreen() {
+		const loadingScreen = $getBySelector(document, SELECTORS.COMMON.LOADING);
+		loadingScreen.style.display = "none";
 	}
 
 	updateDisplayedData(index) {
