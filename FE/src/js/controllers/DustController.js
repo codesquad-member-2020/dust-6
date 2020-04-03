@@ -15,9 +15,9 @@ export default class DustController {
 		}
 	}
 
-	init() {
+	async init() {
 		this.dustView.subscribe();
-		this.dustModel.getGeoLocation();
+		await this.dustModel.getGeoLocation();
 		this.dustView.bindOnScrollListener(this.barGraphScrollHandler.bind(this));
 	}
 }
