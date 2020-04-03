@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager {
     static let session: URLSession = URLSession.shared
-    static let serverUrl = "https://codesquad-dust6.herokuapp.com/"
+    static let serverUrl = "http://34.236.160.204:8080/"
     static var dustStatusUrl: String {
         return serverUrl + "api/dust-status/location?"
     }
