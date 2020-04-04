@@ -15,7 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	dustView.subscribe();
 	forecastView.subscribe();
 
-	// dustModel.getGeoLocation();
 	dustModel.fetchData();
 	forecastModel.fetchData();
 });

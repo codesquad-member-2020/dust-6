@@ -41,6 +41,7 @@ export default class DustView {
 
 	updateDustPanelView(index) {
 		const currentBar = this.dustGraphBars[index];
+		if (currentBar.className === "message") return;
 		const { grade, value, time } = currentBar.dataset;
 		const [emoji, text, color] = GRADE_OPTIONS[grade];
 		this.dustPanel.style.background = `linear-gradient(${color}, #fff)`;
