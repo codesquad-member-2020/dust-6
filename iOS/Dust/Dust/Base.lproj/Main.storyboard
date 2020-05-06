@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--미세먼지-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FineDustViewController" customModule="Dust" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yom-hq-OI1" customClass="StatusView" customModule="Dust" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GE-gH-ycc">
+                                        <rect key="frame" x="116.5" y="52" width="181.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pE-tA-3rH" customClass="StatusEmoji" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="131" y="100" width="152" height="167.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="140"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터 로드중.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28G-z2-7mC" customClass="StatusLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="117.5" y="267.5" width="179.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-oY-oS2" customClass="MeasurementTimeLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="212.5" y="311.5" width="141" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 𝜇g/m³" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-8k-mCE" customClass="DensityLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="79.5" y="311.5" width="103.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠시만 기다려주세요!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSh-1Q-jXj" customClass="StationLabel" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="138" y="355.5" width="138.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="fgu-8k-mCE" firstAttribute="centerX" secondItem="7pE-tA-3rH" secondAttribute="leading" id="0yh-1H-B3W"/>
+                                    <constraint firstItem="PSh-1Q-jXj" firstAttribute="top" secondItem="gMh-oY-oS2" secondAttribute="bottom" constant="8" id="4La-ZD-XZy"/>
+                                    <constraint firstItem="7pE-tA-3rH" firstAttribute="top" secondItem="9GE-gH-ycc" secondAttribute="bottom" id="EWR-tF-QUU"/>
+                                    <constraint firstItem="PSh-1Q-jXj" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="Jml-Mx-m1U"/>
+                                    <constraint firstItem="9GE-gH-ycc" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="OPk-tT-gaj"/>
+                                    <constraint firstItem="7pE-tA-3rH" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="epD-ro-37Q"/>
+                                    <constraint firstItem="gMh-oY-oS2" firstAttribute="centerX" secondItem="7pE-tA-3rH" secondAttribute="trailing" id="fGz-lh-tgi"/>
+                                    <constraint firstItem="gMh-oY-oS2" firstAttribute="top" secondItem="28G-z2-7mC" secondAttribute="bottom" constant="8" id="pl2-pS-vI4"/>
+                                    <constraint firstItem="28G-z2-7mC" firstAttribute="top" secondItem="7pE-tA-3rH" secondAttribute="bottom" id="sFf-rt-FxA"/>
+                                    <constraint firstItem="fgu-8k-mCE" firstAttribute="top" secondItem="28G-z2-7mC" secondAttribute="bottom" constant="8" id="wAf-as-egb"/>
+                                    <constraint firstItem="28G-z2-7mC" firstAttribute="centerX" secondItem="yom-hq-OI1" secondAttribute="centerX" id="ynR-hi-jVi"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="20" estimatedRowHeight="20" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="958-Wq-lCk" customClass="DustDensityTableView" customModule="Dust" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="430" width="414" height="383"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DustDensityCell" id="ftf-Q5-Tcb" customClass="DustDensityCell" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="20"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ftf-Q5-Tcb" id="jD7-qz-jLT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="0bW-ta-ymC"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BIY-nr-rMU"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="958-Wq-lCk" secondAttribute="bottom" id="PoP-IZ-zHZ"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="958-Wq-lCk" secondAttribute="trailing" id="WBJ-Yr-DN4"/>
+                            <constraint firstItem="9GE-gH-ycc" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="hGP-rb-shS"/>
+                            <constraint firstItem="958-Wq-lCk" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="jOU-vf-LW1"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="48%" id="jwe-1P-G8w"/>
+                            <constraint firstItem="yom-hq-OI1" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="mAC-PI-Sac"/>
+                            <constraint firstItem="958-Wq-lCk" firstAttribute="top" secondItem="yom-hq-OI1" secondAttribute="bottom" id="vct-0z-aKk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="미세먼지" image="smoke.fill" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="densityLabel" destination="fgu-8k-mCE" id="0TN-VN-hvM"/>
+                        <outlet property="dustDensityTableView" destination="958-Wq-lCk" id="bDH-8Q-3FZ"/>
+                        <outlet property="stationLabel" destination="PSh-1Q-jXj" id="nEZ-eK-Ea4"/>
+                        <outlet property="statusEmoji" destination="7pE-tA-3rH" id="NPM-tm-Ecr"/>
+                        <outlet property="statusLabel" destination="28G-z2-7mC" id="IMg-OR-gKb"/>
+                        <outlet property="statusView" destination="yom-hq-OI1" id="Phx-zK-YWG"/>
+                        <outlet property="timeLabel" destination="gMh-oY-oS2" id="gjf-te-fS7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
+        </scene>
+        <!--예보-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="ForecastViewController" customModule="Dust" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 예보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuR-j4-eBX">
+                                <rect key="frame" x="126" y="60" width="162" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jbm-tE-QIU">
+                                <rect key="frame" x="0.0" y="104" width="414" height="401"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="8R0-Br-E2X"/>
+                                    <constraint firstAttribute="height" constant="401" id="lNG-0a-YIc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○ 예보 정보를 받아오는 중입니다. 잠시만 기다려주세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-Gz-fU7">
+                                <rect key="frame" x="15" y="509" width="384" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-y0-ovy">
+                                <rect key="frame" x="15" y="538.5" width="384" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-yO-Chd">
+                                <rect key="frame" x="15" y="565.5" width="384" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PZ-ec-Qbs" customClass="PlayButton" customModule="Dust" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="3uK-mS-XYl"/>
+                                            <constraint firstAttribute="height" constant="44" id="bmN-8V-aIS"/>
+                                        </constraints>
+                                        <state key="normal" image="play.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-o6-xWh">
+                                        <rect key="frame" x="82" y="0.0" width="304" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="8uL-J4-m8u"/>
+                                        </constraints>
+                                    </slider>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tuR-j4-eBX" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="0wi-Hw-LOf"/>
+                            <constraint firstItem="i2v-Gz-fU7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="2G0-Wp-Bz3"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="aA8-yO-Chd" secondAttribute="trailing" constant="15" id="3xf-cC-x3J"/>
+                            <constraint firstItem="i2v-Gz-fU7" firstAttribute="top" secondItem="Jbm-tE-QIU" secondAttribute="bottom" constant="4" id="8Ue-rM-YT1"/>
+                            <constraint firstItem="Jbm-tE-QIU" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="FZZ-Uj-XZ2"/>
+                            <constraint firstItem="Jbm-tE-QIU" firstAttribute="top" secondItem="tuR-j4-eBX" secondAttribute="bottom" constant="8" id="KNT-4u-gWF"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Jbm-tE-QIU" secondAttribute="trailing" id="V4m-l2-EwQ"/>
+                            <constraint firstItem="tuR-j4-eBX" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="16" id="ZSS-QM-ZaE"/>
+                            <constraint firstItem="aA8-yO-Chd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="ZjY-BQ-QCu"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="5QY-y0-ovy" secondAttribute="trailing" constant="15" id="gOB-Kg-WzP"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="i2v-Gz-fU7" secondAttribute="trailing" constant="15" id="r2D-HX-cul"/>
+                            <constraint firstItem="aA8-yO-Chd" firstAttribute="top" secondItem="5QY-y0-ovy" secondAttribute="bottom" constant="27" id="sYI-jG-GIb"/>
+                            <constraint firstItem="5QY-y0-ovy" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="stG-Yg-Uuc"/>
+                            <constraint firstItem="5QY-y0-ovy" firstAttribute="top" secondItem="i2v-Gz-fU7" secondAttribute="bottom" constant="15" id="wcK-PN-vnA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="예보" image="clock.fill" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="forecastGrade" destination="5QY-y0-ovy" id="Wwl-Rn-ZJg"/>
+                        <outlet property="forecastImage" destination="Jbm-tE-QIU" id="Ta9-oj-nEw"/>
+                        <outlet property="forecastOverall" destination="i2v-Gz-fU7" id="IHQ-6g-I2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock.fill" width="17" height="17"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="smoke.fill" width="19" height="14"/>
+    </resources>
+</document>
